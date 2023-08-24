@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "babel-build": "babel src -d build",
+    "webpack-build": "SET NODE_ENV=production && webpack --config webpack.config.js",
     "dev": "SET NODE_ENV=development && webpack serve --config webpack.config.js",
-    "build": "SET NODE_ENV=production && webpack --config webpack.config.js",
-    "start": "npm run build && cd server && node index.js"
+    "start": "npm run webpack-build && cd server && node index.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
+    "react-router-dom": "^6.15.0",
     "sass": "^1.64.2",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",

@@ -8,10 +8,11 @@ const production = process.env.NODE_ENV === 'production';
 
 
 module.exports = {
-    entry: { myAppName: path.resolve(__dirname, "./src/index.js") },
+    entry: { build: path.resolve(__dirname, "./src/index.js") },
     output: {
         path: path.resolve(__dirname, "./build"),
         filename: production ? '[name].[contenthash].js' : '[name].js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -61,6 +62,18 @@ module.exports = {
     devServer: {
         port: 3000,
         hot: true,
+        compress: true,
+        historyApiFallback: true,
+        static: {
+            directory: path.join(__dirname, 'build')
+        },
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false,
+            },
+            progress: true
+        },
     },
     mode: production ? 'production' : 'development'
 };
