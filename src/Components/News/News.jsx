@@ -4,7 +4,7 @@ import NewsBlock from "./NewsBlock/NewsBlock.jsx"
 
 const News = (props) => {
 
-    let NewsComponents = props.newsData.map(n => <NewsBlock id={n.id} name={n.name} />);
+    const NewsComponents = props.newsData.map(n => <NewsBlock id={n.id} name={n.name} key={n.id} />);
 
     return (
         <div className={news_style.news}>
