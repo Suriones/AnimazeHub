@@ -1,6 +1,6 @@
 Install all dependencies: "npm install";
 
-Start dev: "npm run dev";
-Start server: "npm run start";
+Start webpack-dev server: "npm run dev";
+Start index.js server: "npm start";
 
 URL: http://localhost:3000/

@@ -4,7 +4,7 @@ import AnimeBlock from "./AnimeBlock/AnimeBlock";
 
 const Anime = (props) => {
 
-    let animeComponents = props.animeData.map(a => <AnimeBlock id={a.id} name={a.name} />);
+    const animeComponents = props.animeData.map(a => <AnimeBlock id={a.id} name={a.name} comments={a.comments} key={a.id} />);
 
     return (
         <div className={anime_style.anime}>

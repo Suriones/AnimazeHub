@@ -7,11 +7,11 @@ const Header = (props) => {
         <div className={header_style.header}>
 
             <div className={header_style.header_button}>
-                <NavLink to="/" className={(navData) => navData.isActive ? header_style.active : header_style.no_active}>{props.main}</NavLink>
+                <NavLink to="/" className={(navData) => navData.isActive ? header_style.active : header_style.no_active} end>Головна</NavLink>
             </div>
 
             <div className={header_style.header_button}>
-                <NavLink to="/anime" className={(navData) => navData.isActive ? header_style.active : header_style.no_active}>{props.anime}</NavLink>
+                <NavLink to="/anime" className={(navData) => navData.isActive ? header_style.active : header_style.no_active} end>Список аніме</NavLink>
             </div>
 
         </div>
