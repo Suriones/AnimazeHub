@@ -1,31 +1,52 @@
-const initialState = [];
+const initialState = {
+    anime: []
+};
 
 const anime_reducer = (state = initialState, action) => {
 
-    switch (action.type) {
+    const _createStateCopyAnime = () => {
+        let stateCopy = {
+            anime: []
+        }
 
+        stateCopy.anime = state.anime.map(item => ({
+            id: item.id,
+            name: item.name,
+            comments: (item.comments.map(comment => ({
+                id: comment.id,
+                text: comment.text
+            })))
+        }));
+
+        return stateCopy;
+    }
+
+    switch (action.type) {
         case "addComment":
             if (action.text) {
+
                 let comment = {
-                    id: state[action.id].comments.length + 1,
+                    id: state.anime[action.id].comments.length + 1,
                     text: action.text
                 }
 
-                let stateCopy = state.map(item => ({
-                    id: item.id,
-                    name: item.name,
-                    comments: (item.comments.map(comment => ({
-                        id: comment.id,
-                        text: comment.text
-                    })))
-                }));
+                let stateCopy = _createStateCopyAnime();
 
-                stateCopy[action.id].comments.push(comment);
+                stateCopy.anime[action.id].comments.push(comment);
 
                 return stateCopy;
             }
+
+            return state;
+
         case "setStateAnimeData":
-            return state = action.newState;
+            let stateCopy = _createStateCopyAnime();
+
+            for (let i = 0; i < action.newState.length; i++) {
+                stateCopy.anime[i] = action.newState[i];
+            }
+
+            return stateCopy;
 
         default:
             return state;

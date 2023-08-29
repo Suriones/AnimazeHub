@@ -9,17 +9,17 @@ import * as axios from 'axios';
 const App = (props) => {
 
     useEffect(() => { //Наповнення стору данними відразу
-        if (props.state.animeData.length === 0) { axios.get("http://localhost:3001/animeData").then(response => { props.dispatch({ type: "setStateAnimeData", newState: response.data }); }); }
-        if (props.state.newsData.length === 0) { axios.get("http://localhost:3001/newsData").then(response => { props.dispatch({ type: "setStateNewsData", newState: response.data }); }); }
+        if (props.state.animeData.anime.length === 0) { axios.get("http://localhost:3001/animeData").then(response => { props.dispatch({ type: "setStateAnimeData", newState: response.data }) }) }
+        if (props.state.newsData.news.length === 0) { axios.get("http://localhost:3001/newsData").then(response => { props.dispatch({ type: "setStateNewsData", newState: response.data }) }) }
     })
 
     return (
         <div>
             <Header />
             <Routes>
-                <Route path="/" element={<News newsData={props.state.newsData} />} />
-                <Route path="/anime" element={<Anime animeData={props.state.animeData} dispatch={props.dispatch} />} />
-                <Route path="/anime/*" element={<AnimeFullPageContainer animeData={props.state.animeData} dispatch={props.dispatch} />} />
+                <Route path="/" element={<News newsData={props.state.newsData.news} />} />
+                <Route path="/anime" element={<Anime animeData={props.state.animeData.anime} dispatch={props.dispatch} />} />
+                <Route path="/anime/*" element={<AnimeFullPageContainer animeData={props.state.animeData.anime} dispatch={props.dispatch} />} />
             </Routes>
         </div>
     );

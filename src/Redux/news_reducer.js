@@ -1,11 +1,31 @@
-const initialState = [];
+const initialState = {
+    news: []
+};
 
 const news_reducer = (state = initialState, action) => {
 
-    switch (action.type) {
+    const _createStateCopyNews = () => {
+        let stateCopy = {
+            news: []
+        }
 
+        stateCopy.news = state.news.map(item => ({
+            id: item.id,
+            name: item.name
+        }));
+
+        return stateCopy;
+    }
+
+    switch (action.type) {
         case "setStateNewsData":
-            return state = action.newState;
+            let stateCopy = _createStateCopyNews();
+
+            for (let i = 0; i < action.newState.length; i++) {
+                stateCopy.news[i] = action.newState[i];
+            }
+
+            return stateCopy;
 
         default:
             return state;
