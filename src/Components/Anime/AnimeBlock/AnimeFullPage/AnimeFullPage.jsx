@@ -6,21 +6,25 @@ const AnimeFullPage = (props) => {
     const newCommentElement = React.createRef();
     const send = () => { props.send(newCommentElement.current.value, props.id); }
 
-    return (
-        <div className={animeFullPage_style.anime}>
-
-            <h1>{props.name}</h1>
-
-            <div className={animeFullPage_style.textArea}>
-                <textarea ref={newCommentElement} name="textarea"></textarea>
+    if (props.commentsComponents === undefined) {
+        return (<div className={animeFullPage_style.anime}><span className={animeFullPage_style.loading}>LOADING...</span></div>)
+    } else {
+        return (
+            <div className={animeFullPage_style.anime}>
+    
+                <h1>{props.name}</h1>
+    
+                <div className={animeFullPage_style.textArea}>
+                    <textarea ref={newCommentElement} name="textarea"></textarea>
+                </div>
+    
+                <div className={animeFullPage_style.sendButton}>
+                    <button onClick={send}>Відправити</button>
+                </div>
+                    {props.commentsComponents}
             </div>
-
-            <div className={animeFullPage_style.sendButton}>
-                <button onClick={send}>Відправити</button>
-            </div>
-                {props.commentsComponents}
-        </div>
-    );
+        );
+    }
 }
 
 export default AnimeFullPage;
