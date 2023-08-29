@@ -8,7 +8,7 @@ const Anime = (props) => {
 
     return (
         <div className={anime_style.anime}>
-            {animeComponents};
+            {animeComponents}
         </div>
     );
 }

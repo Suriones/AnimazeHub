@@ -1,0 +1,56 @@
+    {
+        "animeData": [
+            {
+                "id": 0,
+                "name": "One Piece",
+                "comments": [
+                    {
+                        "id": 0,
+                        "text": "Good anime!"
+                    },
+                    {
+                        "id": 1,
+                        "text": "WpWp!"
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Death Note",
+                "comments": [
+                    {
+                        "id": 0,
+                        "text": "better"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "JSON",
+                "comments": [
+                    {
+                        "id": 0,
+                        "text": "JSON WP"
+                    }
+                ]
+            }
+        ],
+        "newsData": [
+            {
+                "id": 0,
+                "name": "News"
+            },
+            {
+                "id": 1,
+                "name": "News"
+            },
+            {
+                "id": 2,
+                "name": "News"
+            },
+            {
+                "id": 3,
+                "name": "News"
+            }
+        ]
+    }
