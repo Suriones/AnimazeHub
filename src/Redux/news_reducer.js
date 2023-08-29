@@ -1,11 +1,15 @@
-const initialState = [
-        { id: 1, name: "News" },
-        { id: 2, name: "News" },
-        { id: 3, name: "News" }
-];
+const initialState = [];
 
 const news_reducer = (state = initialState, action) => {
-    return state;
+
+    switch (action.type) {
+
+        case "setStateNewsData":
+            return state = action.newState;
+
+        default:
+            return state;
+    }
 }
 
 export default news_reducer;

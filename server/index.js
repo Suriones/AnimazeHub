@@ -5,7 +5,7 @@ const HOST = "localhost";
 const PORT = 3000;
 
 let server = http.createServer((req, res) => {
-    
+
     let stream;
 
     switch (req.url) {
