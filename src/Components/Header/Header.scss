@@ -1,13 +1,21 @@
-.header {
+body {
+    margin: 0;
+}
 
-    width: 100%;
+.header {
     height: 80px;
-    background-color: #001a72;
+    background-color: #005090;
+    display: flex;
+    box-sizing: border-box;
 
     .header_button {
-        display: inline-block;
-        position: relative;
-        padding: 30px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+
+        #main {
+            padding-left: 30px;
+        }
 
         .active {
             color: gold;
@@ -19,6 +27,7 @@
 
         a {
             text-decoration: none;
+            width: 100px;
         }
     }
 }

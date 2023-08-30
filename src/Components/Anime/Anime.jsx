@@ -4,7 +4,7 @@ import AnimeBlock from "./AnimeBlock/AnimeBlock";
 
 const Anime = (props) => {
 
-    const animeComponents = props.animeData.map(a => <AnimeBlock id={a.id} name={a.name} comments={a.comments} key={a.id} />);
+    const animeComponents = props.animeData.map(a => <AnimeBlock id={a.id} name={a.name} comments={a.comments} key={a.id} img={a.img} />);
 
     if (props.animeData.length === 0) {
         return (<div className={anime_style.anime}><span className={anime_style.loading}>LOADING...</span></div>)

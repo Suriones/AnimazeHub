@@ -3,12 +3,14 @@ import animeBlock_style from "./AnimeBlock.scss";
 import { NavLink } from "react-router-dom";
 
 const AnimeBlock = (props) => {
-    
+
     return (
-        <div className={animeBlock_style.block}>
-            <p>{props.name}</p>
-            <NavLink to={'/anime/' + props.id}>Перейти!</NavLink>
-        </div>
+        <NavLink to={'/anime/' + props.id}>
+            <div className={animeBlock_style.block}>
+                <img src={props.img}></img>
+                <p>{props.name}</p>
+            </div>
+        </NavLink>
     )
 }
 

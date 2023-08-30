@@ -11,7 +11,7 @@ const News = (props) => {
     } else {
         return (
             <div className={news_style.news}>
-                {NewsComponents};
+                {NewsComponents}
             </div>
         );
     }

@@ -8,9 +8,9 @@ import * as axios from 'axios';
 
 const App = (props) => {
 
-    useEffect(() => { //Наповнення стору данними відразу
-        if (props.state.animeData.anime.length === 0) { axios.get("http://localhost:3001/animeData").then(response => { props.dispatch({ type: "setStateAnimeData", newState: response.data }) }) }
-        if (props.state.newsData.news.length === 0) { axios.get("http://localhost:3001/newsData").then(response => { props.dispatch({ type: "setStateNewsData", newState: response.data }) }) }
+    useEffect(() => { //Наповнення стору данними відразу, з любого місця на сайті
+        if (!Boolean(props.state.animeData.anime.length)) { axios.get("http://localhost:3001/animeData").then(response => { props.dispatch({ type: "setStateAnimeData", newState: response.data }) }) }
+        if (!Boolean(props.state.newsData.news.length)) { axios.get("http://localhost:3001/newsData").then(response => { props.dispatch({ type: "setStateNewsData", newState: response.data }) }) }
     })
 
     return (

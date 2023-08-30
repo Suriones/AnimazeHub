@@ -1,7 +1,6 @@
 .news {
-    width: 100%;
-    min-height: 500px;
-    background-color: blue;
+    min-height: calc(100vh - 80px);
+    background-color: #0768b5;
 
     p {
         color: white;
