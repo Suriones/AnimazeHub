@@ -11,9 +11,9 @@ const AnimeFullPageContainer = (props) => {
         props.dispatch({ type: "addComment", text: text, id: id });
     }
 
-    if (props.animeData.length !== 0) { //Перевірка на нульовий рендер, якщо дані ще не оновились або не встигли прийти, рендериться пуста сторінка. Зафіксив таким чином помилку в консолі (props.animeData.comments = undefined).
+    if (props.animeData.length) {
         let commentsComponents = props.animeData[id].comments.map(c => <Comment text={c.text} key={c.id} />);
-        return (<AnimeFullPage name={props.animeData[id].name} send={send} commentsComponents={commentsComponents} id={id} />);
+        return (<AnimeFullPage animeData={props.animeData[id]} send={send} commentsComponents={commentsComponents} id={id} />);
     } else {
         return (<AnimeFullPage />);
     }

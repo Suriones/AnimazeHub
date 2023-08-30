@@ -1,24 +1,81 @@
 .anime {
-    width: 100%;
-    min-height: 500px;
-    background-color: blue;
+    min-height: calc(100vh - 100px);
+    padding: 10px;
+    background-color: #0768b5;
     color: white;
-    
-    h1 {
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin: 0 0 0 10px;
-        padding-top: 10px;
+
+    .preview {
+        display: flex;
+        box-sizing: border-box;
+        margin-bottom: 100px;
+
+        .picture {
+
+            img {
+                width: 400px;
+                height: 600px;
+                padding: 10px;
+            }
+        }
+
+        .information {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+                width: 200px;
+                height: 50px;
+                padding: 10px;
+
+                h1 {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+
+            .description {
+                width: 700px;
+                margin: 10px;
+            }
+
+            .video {
+                padding: 15px 0 0 10px;
+                iframe {
+                    border: 0;
+                }
+            }
+        }
     }
 
-    .textArea {
-        margin: 30px 0 0 10px;
+    hr {
+        height: 12px;
+        border: 0;
+        box-shadow: inset 0 15px 12px -11px rgba(0, 0, 0, 0.15);
     }
 
-    .sendButton {
-        margin: 0 0 0 10px;
+    .commentsWord {
+        h1 {
+            padding: 10px;
+        }
     }
-    
+
+    .comments {
+        display: flex;
+
+        .textArea {
+            padding: 0 10px 10px 10px;
+
+
+            textarea {
+                width: 350px;
+                height: 50px;
+            }
+        }
+
+        .sendButton {
+            button {}
+        }
+    }
 }
 
 .loading {

@@ -12,6 +12,9 @@ const anime_reducer = (state = initialState, action) => {
         stateCopy.anime = state.anime.map(item => ({
             id: item.id,
             name: item.name,
+            img: item.img,
+            description: item.description,
+            trailer: item.trailer,
             comments: (item.comments.map(comment => ({
                 id: comment.id,
                 text: comment.text
