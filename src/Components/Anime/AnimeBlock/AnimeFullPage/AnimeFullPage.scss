@@ -1,16 +1,12 @@
 .anime {
-    min-height: calc(100vh - 100px);
     padding: 10px;
-    background-color: #0768b5;
     color: white;
 
     .preview {
         display: flex;
-        box-sizing: border-box;
-        margin-bottom: 100px;
+        padding-bottom: 70px;
 
         .picture {
-
             img {
                 width: 400px;
                 height: 600px;
@@ -29,13 +25,12 @@
 
                 h1 {
                     display: table-cell;
-                    vertical-align: middle;
                 }
             }
 
             .description {
                 width: 700px;
-                margin: 10px;
+                padding: 10px;
             }
 
             .video {
@@ -54,7 +49,7 @@
         box-shadow: inset 0 15px 12px -11px rgba(0, 0, 0, 0.15);
     }
 
-    .commentsWord {
+    .commentsJustWord {
         h1 {
             padding: 10px;
         }
@@ -72,12 +67,6 @@
                 height: 50px;
             }
         }
-    }
-
-    .pageCountRight {
-        margin-left: 10px;
-        text-decoration: none;
-        cursor: pointer;
     }
 }
 
