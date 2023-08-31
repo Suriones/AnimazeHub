@@ -2,6 +2,18 @@ body {
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+    background: white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #005090;
+}
+
 .header {
     height: 80px;
     background-color: #005090;
