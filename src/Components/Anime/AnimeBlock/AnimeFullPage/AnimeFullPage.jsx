@@ -9,7 +9,6 @@ const AnimeFullPage = (props) => {
     }
     const send = () => { props.send(newCommentElement.current.value, props.id); setTimeout(scroll, 50); }
 
-
     if (props.commentsComponents === undefined) {
         return (<div className={animeFullPage_style.anime}><span className={animeFullPage_style.loading}>LOADING...</span></div>)
     } else {
@@ -55,6 +54,7 @@ const AnimeFullPage = (props) => {
 
                 </div>
                 {props.commentsComponents}
+                {props.pagesCommentsCountComponents}
             </div>
         );
     }

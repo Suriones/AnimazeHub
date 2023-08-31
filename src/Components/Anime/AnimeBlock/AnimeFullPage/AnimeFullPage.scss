@@ -40,6 +40,7 @@
 
             .video {
                 padding: 15px 0 0 10px;
+
                 iframe {
                     border: 0;
                 }
@@ -71,10 +72,12 @@
                 height: 50px;
             }
         }
+    }
 
-        .sendButton {
-            button {}
-        }
+    .pageCountRight {
+        margin-left: 10px;
+        text-decoration: none;
+        cursor: pointer;
     }
 }
 
