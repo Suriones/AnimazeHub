@@ -8,16 +8,14 @@ import * as axios from 'axios';
 
 const App = (props) => {
 
-    useEffect(() => {
-        if (!Boolean(props.state.animeData.anime.length)) { axios.get("http://localhost:3001/animeData").then(response => { props.dispatch({ type: "setStateAnimeData", newState: response.data }) }) }
-        if (!Boolean(props.state.newsData.news.length)) { axios.get("http://localhost:3001/newsData").then(response => { props.dispatch({ type: "setStateNewsData", newState: response.data }) }) }
-    })
+    if (!Boolean(props.state.animeData.anime.length)) { axios.get("http://localhost:3001/animeData").then(response => { props.dispatch({ type: "setStateAnimeData", newState: response.data }) }) }
+    if (!Boolean(props.state.newsData.news.length)) { axios.get("http://localhost:3001/newsData").then(response => { props.dispatch({ type: "setStateNewsData", newState: response.data }) }) }
 
     return (
         <div>
             <Header />
             <Routes>
-                <Route path="/" element={<News newsData={props.state.newsData.news} />} />
+                <Route path="/" element={<News newsData={props.state.newsData.news} dispatch={props.dispatch} />} />
                 <Route path="/anime" element={<Anime animeData={props.state.animeData.anime} dispatch={props.dispatch} />} />
                 <Route path="/anime/*" element={<AnimeFullPageContainer animeData={props.state.animeData.anime} dispatch={props.dispatch} />} />
             </Routes>

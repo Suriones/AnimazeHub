@@ -7,7 +7,7 @@ const Header = (props) => {
         <div className={header_style.header}>
 
             <div className={header_style.header_button}>
-                <NavLink id={header_style.main} to="/" className={(navData) => navData.isActive ? header_style.active : header_style.no_active} end>Головна</NavLink>
+                <NavLink to="/" className={(navData) => navData.isActive ? header_style.active : header_style.no_active} end>Головна</NavLink>
             </div>
 
             <div className={header_style.header_button}>

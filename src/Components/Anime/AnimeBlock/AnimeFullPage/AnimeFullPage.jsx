@@ -4,10 +4,8 @@ import animeFullPage_style from "./AnimeFullPage.scss";
 const AnimeFullPage = (props) => {
 
     const newCommentElement = React.createRef();
-    const scroll = () => {
-        window.scrollTo(0, 9999);
-    }
-    const send = () => { props.send(newCommentElement.current.value, props.id); setTimeout(scroll, 50); }
+
+    const send = () => { props.send(newCommentElement.current.value, props.id); setTimeout(props.scrollDown, 50); }
 
     if (props.commentsComponents === undefined) {
         return (<div className={animeFullPage_style.anime}><span className={animeFullPage_style.loading}>LOADING...</span></div>)
@@ -39,7 +37,7 @@ const AnimeFullPage = (props) => {
                 </div>
 
                 <hr />
-                <div className={animeFullPage_style.commentsWord}>
+                <div className={animeFullPage_style.commentsJustWord}>
                     <h1>Коментарі</h1>
                 </div>
 

@@ -1,9 +1,11 @@
 body {
     margin: 0;
+    background-color: #0768b5;
 }
 
 body::-webkit-scrollbar {
     width: 3px;
+    height: 3px;
 }
 
 body::-webkit-scrollbar-track {
@@ -18,16 +20,11 @@ body::-webkit-scrollbar-thumb {
     height: 80px;
     background-color: #005090;
     display: flex;
-    box-sizing: border-box;
 
     .header_button {
         padding-top: 30px;
         display: flex;
         flex-direction: column;
-
-        #main {
-            padding-left: 30px;
-        }
 
         .active {
             color: gold;
@@ -42,4 +39,8 @@ body::-webkit-scrollbar-thumb {
             width: 100px;
         }
     }
+}
+
+.header:first-child {
+    padding-left: 30px;
 }
