@@ -1,12 +1,14 @@
 const initialState = {
-    news: []
+    news: [],
+    checkerUpdate: false
 };
 
 const news_reducer = (state = initialState, action) => {
 
     const _createStateCopyNews = () => {
         let stateCopy = {
-            news: []
+            news: [],
+            checkerUpdate: state.checkerUpdate
         }
 
         stateCopy.news = state.news.map(item => ({
@@ -17,14 +19,21 @@ const news_reducer = (state = initialState, action) => {
         return stateCopy;
     }
 
+    let stateCopy;
+
     switch (action.type) {
         case "setStateNewsData":
-            let stateCopy = _createStateCopyNews();
+            stateCopy = _createStateCopyNews();
 
             for (let i = 0; i < action.newState.length; i++) {
                 stateCopy.news[i] = action.newState[i];
             }
 
+            return stateCopy;
+
+        case "changedDBNews":
+            stateCopy = _createStateCopyNews();
+            stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
             return stateCopy;
 
         default:

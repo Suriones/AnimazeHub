@@ -3,9 +3,10 @@ import animeFullPage_style from "./AnimeFullPage.scss";
 
 const AnimeFullPage = (props) => {
 
-    const newCommentElement = React.createRef();
+    const text = React.createRef();
 
-    const send = () => { props.send(newCommentElement.current.value, props.id); setTimeout(props.scrollDown, 50); }
+    const sendToContainer = () => { props.addComment(text.current.value, props.animeID) }
+    const sendValueInput = () => { props.setNewInputText(text.current.value) }
 
     if (props.commentsComponents === undefined) {
         return (<div className={animeFullPage_style.anime}><span className={animeFullPage_style.loading}>LOADING...</span></div>)
@@ -30,7 +31,7 @@ const AnimeFullPage = (props) => {
                         </div>
 
                         <div className={animeFullPage_style.video}>
-                            <iframe width="640" height="360" src={props.animeData.trailer} allowFullScreen></iframe>
+                            {/* <iframe width="640" height="360" src={props.animeData.trailer} allowFullScreen></iframe> */}
                         </div>
 
                     </div>
@@ -43,16 +44,19 @@ const AnimeFullPage = (props) => {
 
                 <div className={animeFullPage_style.comments}>
                     <div className={animeFullPage_style.textArea}>
-                        <textarea ref={newCommentElement} name="textarea"></textarea>
+                        <textarea value={props.inputText} ref={text} onChange={sendValueInput} name="textarea"></textarea>
                     </div>
 
                     <div className={animeFullPage_style.sendButton}>
-                        <button onClick={send}>Відправити</button>
+                        <button onClick={sendToContainer}>Відправити</button>
                     </div>
 
                 </div>
                 {props.commentsComponents}
-                {props.pagesCommentsCountComponents}
+
+                {props.commentPages.map(p => {
+                    return <span key={p.key} className={props.activePage == p.key ? animeFullPage_style.active : null}>{p}</span>
+                })}
             </div>
         );
     }

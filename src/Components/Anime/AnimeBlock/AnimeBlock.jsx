@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const AnimeBlock = (props) => {
 
     return (
-        <NavLink to={'/anime/' + props.id}>
+        <NavLink to={`/anime/${props.id}`}>
             <div className={animeBlock_style.block}>
                 <img src={props.img}></img>
                 <p>{props.name}</p>
