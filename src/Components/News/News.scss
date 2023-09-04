@@ -10,3 +10,21 @@
     top: 30%;
     left: 48%;
 }
+
+.block {
+
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    p {
+        color: black;
+    }
+}
+
+.block:hover {
+    background-color: gold;
+    cursor: pointer;
+}

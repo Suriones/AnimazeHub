@@ -4,20 +4,29 @@ import News from "./Components/News/News.jsx"
 import Anime from "./Components/Anime/Anime.jsx"
 import AnimeFullPageContainer from "./Components/Anime/AnimeBlock/AnimeFullPage/AnimeFullPageContainer.jsx";
 import { Routes, Route } from "react-router-dom";
-import * as axios from 'axios';
+import { animeAPI, newsAPI } from "./Redux/API/api.js";
 
 const App = (props) => {
 
-    if (!Boolean(props.state.animeData.anime.length)) { axios.get("http://localhost:3001/animeData").then(response => { props.dispatch({ type: "setStateAnimeData", newState: response.data }) }) }
-    if (!Boolean(props.state.newsData.news.length)) { axios.get("http://localhost:3001/newsData").then(response => { props.dispatch({ type: "setStateNewsData", newState: response.data }) }) }
+    useEffect(() => {
+        animeAPI.getAll().then(data => {
+            props.dispatch({ type: "setStateAnimeData", newState: data })
+        });
+    }, [props.state.animeData.checkerUpdate]);
+
+    useEffect(() => {
+        newsAPI.getAll().then(data => {
+            props.dispatch({ type: "setStateNewsData", newState: data });
+        });
+    }, [props.state.newsData.checkerUpdate]);
 
     return (
         <div>
             <Header />
             <Routes>
                 <Route path="/" element={<News newsData={props.state.newsData.news} dispatch={props.dispatch} />} />
-                <Route path="/anime" element={<Anime animeData={props.state.animeData.anime} dispatch={props.dispatch} />} />
-                <Route path="/anime/*" element={<AnimeFullPageContainer animeData={props.state.animeData.anime} dispatch={props.dispatch} />} />
+                <Route path="/anime" element={<Anime animeData={props.state.animeData.anime} />} />
+                <Route path="/anime/:animeId" element={<AnimeFullPageContainer animeData={props.state.animeData} dispatch={props.dispatch} commentsData={props.state.commentsData} />} />
             </Routes>
         </div>
     );

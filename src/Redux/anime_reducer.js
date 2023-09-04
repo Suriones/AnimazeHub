@@ -1,12 +1,16 @@
 const initialState = {
-    anime: []
+    anime: [],
+    inputText: "",
+    checkerUpdate: false
 };
 
 const anime_reducer = (state = initialState, action) => {
 
     const _createStateCopyAnime = () => {
         let stateCopy = {
-            anime: []
+            anime: [],
+            inputText: state.inputText,
+            checkerUpdate: state.checkerUpdate
         }
 
         stateCopy.anime = state.anime.map(item => ({
@@ -14,36 +18,18 @@ const anime_reducer = (state = initialState, action) => {
             name: item.name,
             img: item.img,
             description: item.description,
-            trailer: item.trailer,
-            comments: (item.comments.map(comment => ({
-                id: comment.id,
-                text: comment.text
-            })))
+            trailer: item.trailer
         }));
 
         return stateCopy;
     }
 
+    let stateCopy;
+
     switch (action.type) {
-        case "addComment":
-            if (action.text) {
-
-                let comment = {
-                    id: state.anime[action.id].comments.length + 1,
-                    text: action.text
-                }
-
-                let stateCopy = _createStateCopyAnime();
-
-                stateCopy.anime[action.id].comments.push(comment);
-
-                return stateCopy;
-            }
-
-            return state;
 
         case "setStateAnimeData":
-            let stateCopy = _createStateCopyAnime();
+            stateCopy = _createStateCopyAnime();
 
             for (let i = 0; i < action.newState.length; i++) {
                 stateCopy.anime[i] = action.newState[i];
@@ -51,6 +37,20 @@ const anime_reducer = (state = initialState, action) => {
 
             return stateCopy;
 
+        case "setNewInputText":
+            stateCopy = _createStateCopyAnime();
+            stateCopy.inputText = action.value;
+            return stateCopy;
+
+        case "clearInputText":
+            stateCopy = _createStateCopyAnime();
+            stateCopy.inputText = "";
+            return stateCopy;
+
+        case "changedDBAnime":
+            stateCopy = _createStateCopyAnime();
+            stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
+            return stateCopy;
         default:
             return state;
     }
