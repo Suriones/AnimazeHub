@@ -11,7 +11,7 @@ const AnimeFullPageContainer = (props) => {
     const animeID = parseInt(Object.values(useParams()));
 
     useEffect(() => {
-        commentsAPI.getCountComments(animeID).then(count => {
+        commentsAPI.getAnimeCountComments(animeID).then(count => {
             props.dispatch({ type: "setCommentsLength", commentsLength: count });
         })
     }, [props.commentsData.checkerUpdate]);
@@ -19,7 +19,7 @@ const AnimeFullPageContainer = (props) => {
     useEffect(() => {
         commentsAPI.showFirstCommentsPage(animeID).then(data => {
             props.dispatch({ type: "setStateCommentsData", newState: data });
-            props.dispatch({ type: "setActivePage", activePage: 1})
+            props.dispatch({ type: "setActivePage", activePage: 1 });
         })
     }, []);
 
@@ -35,38 +35,52 @@ const AnimeFullPageContainer = (props) => {
             window.scrollTo(0, 9999);
         }
 
-        const showClickCommentsPage = (selectedPage) => {
-            commentsAPI.showClickCommentsPage(selectedPage.target.id, animeID).then(data => {
+        const showActiveCommentsPage = (selectedPage) => {
+            commentsAPI.showActiveCommentsPage(selectedPage.target.id, animeID).then(data => {
                 props.dispatch({ type: "setStateCommentsData", newState: data });
-                props.dispatch({ type: "setActivePage", activePage: selectedPage.target.id})
+                props.dispatch({ type: "setActivePage", activePage: selectedPage.target.id });
+                setTimeout(scrollDown, 80);
             });
-            setTimeout(scrollDown, 80);
         };
 
         const addComment = (text, animeID) => {
-            commentsAPI.addCommentToAnimePage(text, animeID).then(response => {
-                commentsAPI.showLastCommentsPage(animeID).then(data => {
-                    props.dispatch({ type: "setActivePage", activePage: data.numberOfPages})
-                    props.dispatch({ type: "setStateCommentsData", newState: data.data });
-                    props.dispatch({ type: "clearInputText" });
-                    props.dispatch({ type: "changedDBComments" });
-                    setTimeout(scrollDown, 80);
+            if (text !== "") {
+                commentsAPI.addCommentToAnimePage(text, animeID).then(function () {
+                    commentsAPI.showLastCommentsPage(animeID).then(response => {
+                        props.dispatch({ type: "setActivePage", activePage: response.activePage });
+                        props.dispatch({ type: "setStateCommentsData", newState: response.data });
+                        props.dispatch({ type: "clearInputText" });
+                        props.dispatch({ type: "changedDBComments" });
+                        setTimeout(scrollDown, 80);
+                    })
                 })
-            })
+            } else {alert("Пусте поле коментарів!")}
+
         };
 
-        //--- Додавання комментарів і сторінок
-        let commentsComponents = props.commentsData.comments.map(c => <Comment text={c.text} key={c.id} />)
+        //--- Додавання комментарів і сторінок комментарів
+        let commentsComponents = props.commentsData.comments.map(c => <Comment text={c.text} key={c.id} />);
 
-        let commentPagesCount = Math.ceil(props.commentsData.commentsLength / 5);
-        let commentPages = [];
+        let commentsPagesCount = Math.ceil(props.commentsData.commentsLength / 5);
+        let commentsPages = [];
 
-        for (let i = 1; i < commentPagesCount + 1; i++) { //Задача: обрати активний класс і перемалювати його колір
-            commentPages.push(<span key={i} id={i} className={animeFullPage_style.commentPages} onClick={showClickCommentsPage}>{i} </span>);
+        for (let i = 1; i < commentsPagesCount + 1; i++) {
+            commentsPages.push(<span key={i} id={i} className={animeFullPage_style.commentsPages} onClick={showActiveCommentsPage}>{i} </span>);
         }
         //---
 
-        return (<AnimeFullPage animeData={props.animeData.anime[animeID]} inputText={props.animeData.inputText} animeID={animeID} commentsComponents={commentsComponents} activePage={props.commentsData.activePage} commentPages={commentPages} addComment={addComment} setNewInputText={setNewInputText} />);
+        const data = {
+            animeData: props.animeData.anime[animeID],
+            inputText: props.animeData.inputText,
+            animeID: animeID,
+            commentsComponents: commentsComponents,
+            activePage: props.commentsData.activePage,
+            commentsPages: commentsPages,
+            addComment: addComment,
+            setNewInputText: setNewInputText
+        }
+
+        return (<AnimeFullPage data={data} />);
     }
 }
 
