@@ -53,6 +53,7 @@ const comments_reducer = (state = initialState, action) => {
             stateCopy = _createStateCopyComments();
             stateCopy.activePage = action.activePage;
             return stateCopy;
+
         default:
             return state;
     }

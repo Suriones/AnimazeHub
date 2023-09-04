@@ -5,10 +5,10 @@ const AnimeFullPage = (props) => {
 
     const text = React.createRef();
 
-    const sendToContainer = () => { props.addComment(text.current.value, props.animeID) }
-    const sendValueInput = () => { props.setNewInputText(text.current.value) }
+    const sendToContainer = () => { props.data.addComment(text.current.value, props.data.animeID) }
+    const sendValueInput = () => { props.data.setNewInputText(text.current.value) }
 
-    if (props.commentsComponents === undefined) {
+    if (props.data === undefined) {
         return (<div className={animeFullPage_style.anime}><span className={animeFullPage_style.loading}>LOADING...</span></div>)
     } else {
         return (
@@ -17,21 +17,21 @@ const AnimeFullPage = (props) => {
                 <div className={animeFullPage_style.preview}>
 
                     <div className={animeFullPage_style.picture}>
-                        <img src={props.animeData.img}></img>
+                        <img src={props.data.animeData.img}></img>
                     </div>
 
                     <div className={animeFullPage_style.information}>
 
                         <div className={animeFullPage_style.name}>
-                            <h1>{props.animeData.name}</h1>
+                            <h1>{props.data.animeData.name}</h1>
                         </div>
 
                         <div className={animeFullPage_style.description}>
-                            {props.animeData.description}
+                            {props.data.animeData.description}
                         </div>
 
                         <div className={animeFullPage_style.video}>
-                            {/* <iframe width="640" height="360" src={props.animeData.trailer} allowFullScreen></iframe> */}
+                            {/* <iframe width="640" height="360" src={props.data.animeData.trailer} allowFullScreen></iframe> */}
                         </div>
 
                     </div>
@@ -44,7 +44,7 @@ const AnimeFullPage = (props) => {
 
                 <div className={animeFullPage_style.comments}>
                     <div className={animeFullPage_style.textArea}>
-                        <textarea value={props.inputText} ref={text} onChange={sendValueInput} name="textarea"></textarea>
+                        <textarea value={props.data.inputText} ref={text} onChange={sendValueInput} name="textarea"></textarea>
                     </div>
 
                     <div className={animeFullPage_style.sendButton}>
@@ -52,10 +52,10 @@ const AnimeFullPage = (props) => {
                     </div>
 
                 </div>
-                {props.commentsComponents}
+                {props.data.commentsComponents}
 
-                {props.commentPages.map(p => {
-                    return <span key={p.key} className={props.activePage == p.key ? animeFullPage_style.active : null}>{p}</span>
+                {props.data.commentsPages.map(p => {
+                    return <span key={p.key} className={props.data.activePage == p.key ? animeFullPage_style.active : null}>{p}</span>
                 })}
             </div>
         );

@@ -27,25 +27,25 @@ export const commentsAPI = {
     addCommentToAnimePage(text, animeID) {
         return instance.post("commentsData", { text: text, animeId: animeID, newsId: null });
     },
-    showClickCommentsPage(selectedPage, animeID) {
-        return instance.get(`commentsData?animeId_like=${animeID}&_page=${selectedPage}&_limit=5`).then(response => {
-            return response.data;
-        })
-    },
     showFirstCommentsPage(animeID) {
         return instance.get(`commentsData?animeId_like=${animeID}&_page=1&_limit=5`).then(response => {
             return response.data;
         });
     },
+    showActiveCommentsPage(selectedPage, animeID) {
+        return instance.get(`commentsData?animeId_like=${animeID}&_page=${selectedPage}&_limit=5`).then(response => {
+            return response.data;
+        })
+    },
     showLastCommentsPage(animeID) {
         return instance.get(`commentsData?animeId_like=${animeID}`).then(response => {
             let numberOfPages = Math.ceil(response.data.length / 5);
             return instance.get(`commentsData?animeId_like=${animeID}&_page=${numberOfPages}&_limit=5`).then(response => {
-                return { data: response.data, numberOfPages: numberOfPages };
+                return { data: response.data, activePage: numberOfPages };
             })
         })
     },
-    getCountComments(animeID) {
+    getAnimeCountComments(animeID) {
         return instance.get(`commentsData?animeId_like=${animeID}`).then(response => {
             return response.data.length;
         });

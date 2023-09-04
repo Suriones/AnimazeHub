@@ -8,8 +8,9 @@ const News = (props) => {
     const NewsComponents = props.newsData.map(n => <NewsBlock id={n.id} name={n.name} key={n.id} />);
 
     const send = () => {
-        newsAPI.postNews(props.newsData.length, "News");
-        props.dispatch({ type: "changedDBNews" });
+        newsAPI.postNews(props.newsData.length, "News").then(function () {
+            props.dispatch({ type: "changedDBNews" });
+        });
     }
 
     if (!props.newsData.length) {
