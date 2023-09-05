@@ -1,3 +1,5 @@
+import { animeAPI } from "./API/api.js";
+
 const initialState = {
     anime: [],
     inputText: "",
@@ -28,7 +30,7 @@ const anime_reducer = (state = initialState, action) => {
 
     switch (action.type) {
 
-        case "setStateAnimeData":
+        case "setAnimeState":
             stateCopy = _createStateCopyAnime();
 
             for (let i = 0; i < action.newState.length; i++) {
@@ -47,12 +49,23 @@ const anime_reducer = (state = initialState, action) => {
             stateCopy.inputText = "";
             return stateCopy;
 
-        case "changedDBAnime":
+        case "refreshAnimeDB":
             stateCopy = _createStateCopyAnime();
             stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
             return stateCopy;
+            
         default:
             return state;
+    }
+}
+
+export const animeBLL = {
+    getAll() {
+        return (dispatch) => {
+            animeAPI.getAll().then(data => {
+                dispatch({ type: "setAnimeState", newState: data })
+            });
+        }
     }
 }
 
