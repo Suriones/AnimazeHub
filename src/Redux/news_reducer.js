@@ -1,3 +1,5 @@
+import { newsAPI } from "./API/api";
+
 const initialState = {
     news: [],
     checkerUpdate: false
@@ -22,7 +24,7 @@ const news_reducer = (state = initialState, action) => {
     let stateCopy;
 
     switch (action.type) {
-        case "setStateNewsData":
+        case "setNewsState":
             stateCopy = _createStateCopyNews();
 
             for (let i = 0; i < action.newState.length; i++) {
@@ -31,13 +33,30 @@ const news_reducer = (state = initialState, action) => {
 
             return stateCopy;
 
-        case "changedDBNews":
+        case "refreshNewsDB":
             stateCopy = _createStateCopyNews();
             stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
             return stateCopy;
 
         default:
             return state;
+    }
+}
+
+export const newsBLL = {
+    getAll() {
+        return (dispatch) => {
+            newsAPI.getAll().then(data => {
+                dispatch({ type: "setNewsState", newState: data });
+            });
+        }
+    },
+    postNews(id, text) {
+        return (dispatch) => {
+            newsAPI.postNews(id, text).then(function () {
+                dispatch({ type: "refreshNewsDB" });
+            });
+        }
     }
 }
 

@@ -1,12 +1,17 @@
 import React from "react";
 import animeFullPage_style from "./AnimeFullPage.scss";
+import Comment from "./Comments/Comment";
 
 const AnimeFullPage = (props) => {
 
     const text = React.createRef();
 
-    const sendToContainer = () => { props.data.addComment(text.current.value, props.data.animeID) }
-    const sendValueInput = () => { props.data.setNewInputText(text.current.value) }
+    const sendCommentToContainer = () => {
+        props.data.addComment(text.current.value, props.data.animeID)
+    }
+    const sendValueInputToContainer = () => {
+        props.data.setNewInputText(text.current.value)
+    }
 
     if (props.data === undefined) {
         return (<div className={animeFullPage_style.anime}><span className={animeFullPage_style.loading}>LOADING...</span></div>)
@@ -31,7 +36,7 @@ const AnimeFullPage = (props) => {
                         </div>
 
                         <div className={animeFullPage_style.video}>
-                            {/* <iframe width="640" height="360" src={props.data.animeData.trailer} allowFullScreen></iframe> */}
+                            <iframe width="640" height="360" src={props.data.animeData.trailer} allowFullScreen></iframe>
                         </div>
 
                     </div>
@@ -44,15 +49,17 @@ const AnimeFullPage = (props) => {
 
                 <div className={animeFullPage_style.comments}>
                     <div className={animeFullPage_style.textArea}>
-                        <textarea value={props.data.inputText} ref={text} onChange={sendValueInput} name="textarea"></textarea>
+                        <textarea value={props.data.inputText} ref={text} onChange={sendValueInputToContainer} name="textarea"></textarea>
                     </div>
 
                     <div className={animeFullPage_style.sendButton}>
-                        <button onClick={sendToContainer}>Відправити</button>
+                        <button onClick={sendCommentToContainer}>Відправити</button>
                     </div>
 
                 </div>
-                {props.data.commentsComponents}
+                {props.data.commentsComponents.map(c => {
+                    return <Comment text={c.text} key={c.id} />
+                })}
 
                 {props.data.commentsPages.map(p => {
                     return <span key={p.key} className={props.data.activePage == p.key ? animeFullPage_style.active : null}>{p}</span>

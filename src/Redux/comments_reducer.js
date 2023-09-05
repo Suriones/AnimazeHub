@@ -1,3 +1,5 @@
+import { commentsAPI } from "./API/api.js";
+
 const initialState = {
     comments: [],
     checkerUpdate: false,
@@ -29,7 +31,7 @@ const comments_reducer = (state = initialState, action) => {
 
     switch (action.type) {
 
-        case "setStateCommentsData":
+        case "setCommentsState":
             stateCopy = _createStateCopyComments();
             stateCopy.comments = [];
 
@@ -39,23 +41,62 @@ const comments_reducer = (state = initialState, action) => {
 
             return stateCopy;
 
-        case "changedDBComments":
+        case "refreshCommentsDB":
             stateCopy = _createStateCopyComments();
             stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
             return stateCopy;
 
-        case "setCommentsLength":
+        case "setAnimeIDCommentsLength":
             stateCopy = _createStateCopyComments();
             stateCopy.commentsLength = action.commentsLength;
             return stateCopy;
 
-        case "setActivePage":
+        case "setCommentsActivePage":
             stateCopy = _createStateCopyComments();
             stateCopy.activePage = action.activePage;
             return stateCopy;
 
         default:
             return state;
+    }
+}
+
+export const commentsBLL = {
+    getAnimeIdCountComments(animeID) {
+        return (dispatch) => {
+            commentsAPI.getAnimeIdCountComments(animeID).then(count => {
+                dispatch({ type: "setAnimeIDCommentsLength", commentsLength: count });
+            })
+        }
+    },
+    showAnimeIdFirstCommentsPage(animeID) {
+        return (dispatch) => {
+            commentsAPI.showAnimeIdFirstCommentsPage(animeID).then(data => {
+                dispatch({ type: "setCommentsState", newState: data });
+                dispatch({ type: "setCommentsActivePage", activePage: 1 });
+            })
+        }
+    },
+    showAnimeIdActiveCommentsPage(selectedPage, animeID) {
+        return (dispatch) => {
+            commentsAPI.showAnimeIdActiveCommentsPage(selectedPage.target.id, animeID).then(data => {
+                dispatch({ type: "setCommentsState", newState: data });
+                dispatch({ type: "setCommentsActivePage", activePage: selectedPage.target.id });
+            });
+        }
+    },
+    addCommentToAnimePage(text, animeID) {
+        return (dispatch) => {
+            if (text === "") {text = "Empty comment";}
+            commentsAPI.addCommentToAnimePage(text, animeID).then(function () {
+                commentsAPI.showAnimeIdLastCommentsPage(animeID).then(response => {
+                    dispatch({ type: "setCommentsActivePage", activePage: response.activePage });
+                    dispatch({ type: "setCommentsState", newState: response.data });
+                    dispatch({ type: "clearInputText" });
+                    dispatch({ type: "refreshCommentsDB" });
+                })
+            })
+        }
     }
 }
 
