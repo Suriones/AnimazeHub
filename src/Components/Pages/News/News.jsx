@@ -1,6 +1,7 @@
 import React from "react";
 import NewsBlock from "./NewsBlock/NewsBlock.jsx"
 import news_style from "./News.scss";
+import Loading from "../../Loading/Loading.jsx";
 
 const News = (props) => {
 
@@ -9,14 +10,14 @@ const News = (props) => {
     }
 
     if (!props.news.length) {
-        return (<div className={news_style.news}><span className={news_style.loading}>LOADING...</span></div>)
+        return <Loading />
     } else {
         return (
             <div className={news_style.news}>
                 {props.news.map(n => {
                     return <NewsBlock id={n.id} name={n.name} key={n.id} />
                 })}
-                <div className={news_style.block} onClick={sendToDAL}><p>Додати новину</p></div>
+                <div className={news_style.addBlock} onClick={sendToDAL}><p>Додати новину</p></div>
             </div>
         );
     }

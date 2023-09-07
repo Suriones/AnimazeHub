@@ -5,14 +5,14 @@
       "name": "One Piece",
       "img": "https://anime-fans.ru/wp-content/uploads/2023/04/One-Piece-Glava-1082-Data-Vyhoda-Spojlery-2.jpg",
       "description": "Шалено популярне молодіжне аніме про пригоди команди піратів під назвою «Пірати Солом'яного капелюха» на чолі з капітаном Манком Д. Луффі, який в дитинстві з'їв Диявольський плід Гума-Гума, що дав йому здатність розтягуватися, немов гума. Отже, юний хлопчина із невеличкого села та неймовірними здібностями на ім'я Луффі, мріє стати піратом. Після смерті легендарного пірата Гол Д. Роджера, безліч сміливців кинулися на пошуки його незлічених багатств, які в народі отримали назву «Ван-Піс». Луффі також дізнається про скарб і вирішує, що саме зараз настав час втілити свою мрію в життя.",
-      "trailer": "https://www.youtube.com/embed/LHTYpWI3S6Q?si=_sP8V6kIMBsoV_ne"
+      "trailer": "https://www.youtube-nocookie.com/embed/LHTYpWI3S6Q?si=_sP8V6kIMBsoV_ne"
     },
     {
       "id": 1,
       "name": "Death Note",
       "img": "https://media.kg-portal.ru/anime/d/deathnote/posters/deathnote_24.jpg",
       "description": "В основу сюжету фентезійного аніме серіалу «Зошит смерті» лягли культові японські комікси, так звана манга, написана відомим японським письменником Цугумі Оба. Мультсеріал роповідає історію про якийсь дивний зошит, що володіє магічними властивостями, і є ідеальною зброєю. Згідно з легендою, якщо написати на ній ім'я людини і вказати її прикмети, то незабаром її неодмінно спіткає смерть.Одного разу цей жахливий зошит опиняється в руках звичайнісінького школяра Лайта Ягамі. Батько хлопчика більшу частину свого життя присвятив роботі в поліції, намагаючись очистити суспільство від злочинності. Але як би він не намагався це зробити, світ навколо ставав лише гіршим. Заповітна мрія Лайта піти стопами свого батька. І ось коли в його руках виявляється така потужна зброя як зошит смерті, він починає вершити своє власне правосуддя, навіть не думаючи, до яких серйозних наслідків це може призвести.",
-      "trailer": "https://www.youtube.com/embed/NlJZ-YgAt-c?si=oHLnbU95YmB_OuLi"
+      "trailer": "https://www.youtube-nocookie.com/embed/NlJZ-YgAt-c?si=oHLnbU95YmB_OuLi"
     }
   ],
   "newsData": [
@@ -43,32 +43,238 @@
     {
       "id": 6,
       "name": "News"
-    },
-    {
-      "id": 7,
-      "name": "News"
-    },
-    {
-      "id": 8,
-      "name": "News"
-    },
-    {
-      "id": 9,
-      "name": "News"
     }
   ],
   "commentsData": [
     {
-      "text": "WP!",
+      "text": "",
       "animeId": 1,
-      "newsId": null,
       "id": 1
     },
     {
-      "text": "GOOD!",
-      "animeId": 0,
-      "newsId": null,
+      "text": "",
+      "animeId": 1,
       "id": 2
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 3
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 4
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 5
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 6
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 7
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 8
+    },
+    {
+      "text": "asdd",
+      "animeId": 1,
+      "id": 9
+    },
+    {
+      "text": "s",
+      "animeId": 1,
+      "id": 10
+    },
+    {
+      "text": "asdcvds",
+      "animeId": 1,
+      "id": 11
+    },
+    {
+      "text": "asdcvdsss",
+      "animeId": 1,
+      "id": 12
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 13
+    },
+    {
+      "text": "sdas",
+      "animeId": 1,
+      "id": 14
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 15
+    },
+    {
+      "text": "dd",
+      "animeId": 1,
+      "id": 16
+    },
+    {
+      "text": "sdf",
+      "animeId": 1,
+      "id": 17
+    },
+    {
+      "text": "sdfds",
+      "animeId": 1,
+      "id": 18
+    },
+    {
+      "text": "vbnm",
+      "animeId": 1,
+      "id": 19
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 20
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 21
+    },
+    {
+      "text": "asdsad",
+      "animeId": 1,
+      "id": 22
+    },
+    {
+      "text": "ss",
+      "animeId": 1,
+      "id": 23
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 24
+    },
+    {
+      "text": "asdas",
+      "animeId": 1,
+      "id": 25
+    },
+    {
+      "text": "s",
+      "animeId": 1,
+      "id": 26
+    },
+    {
+      "text": "s",
+      "animeId": 1,
+      "id": 27
+    },
+    {
+      "text": "s",
+      "animeId": 1,
+      "id": 28
+    },
+    {
+      "text": "s",
+      "animeId": 1,
+      "id": 29
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 30
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 31
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 32
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 33
+    },
+    {
+      "text": "dfg",
+      "animeId": 0,
+      "id": 34
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 35
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 36
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 37
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 38
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 39
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 40
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 41
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 42
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 43
+    },
+    {
+      "text": "asdsd",
+      "animeId": 1,
+      "id": 44
+    },
+    {
+      "text": "asdsda",
+      "animeId": 1,
+      "id": 45
+    },
+    {
+      "text": "asdsd",
+      "animeId": 1,
+      "id": 46
     }
   ]
 }

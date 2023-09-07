@@ -1,11 +1,11 @@
 import React from "react";
 import animeFullPage_style from "./AnimeFullPage.scss";
-import Comment from "../../../CommentsBlock/Comment/Comment.jsx"
+import Loading from "../../../../Loading/Loading.jsx"
 
 const AnimeFullPage = (props) => {
 
-    if (props.data === undefined) {
-        return (<div className={animeFullPage_style.anime}><span className={animeFullPage_style.loading}>LOADING...</span></div>)
+    if (!props.data) {
+        return <Loading />
     } else {
         return (
             <div className={animeFullPage_style.anime}>
@@ -27,7 +27,7 @@ const AnimeFullPage = (props) => {
                         </div>
 
                         <div className={animeFullPage_style.video}>
-                            {/*<iframe width="640" height="360" src={props.data.trailer} allowFullScreen></iframe>*/}
+                            {<iframe width="640" height="360" src={props.data.trailer} allowFullScreen></iframe>}
                         </div>
 
                     </div>

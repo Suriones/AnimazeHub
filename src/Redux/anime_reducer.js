@@ -2,8 +2,7 @@ import { animeAPI } from "./API/api.js";
 
 const initialState = {
     anime: [],
-    checkerUpdate: false,
-    inputText: ""
+    checkerUpdate: false
 };
 
 const anime_reducer = (state = initialState, action) => {
@@ -11,7 +10,6 @@ const anime_reducer = (state = initialState, action) => {
     const _createStateCopyAnime = () => {
         let stateCopy = {
             anime: [],
-            inputText: state.inputText,
             checkerUpdate: state.checkerUpdate
         }
 
@@ -38,13 +36,6 @@ const anime_reducer = (state = initialState, action) => {
             }
 
             return stateCopy;
-
-        case "setNewInputText":
-            stateCopy = _createStateCopyAnime();
-            stateCopy.inputText = action.value;
-            return stateCopy;
-
-        case "clearInputText":
             stateCopy = _createStateCopyAnime();
             stateCopy.inputText = "";
             return stateCopy;
