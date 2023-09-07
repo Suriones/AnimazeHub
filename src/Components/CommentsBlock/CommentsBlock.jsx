@@ -8,9 +8,6 @@ const CommentsBlock = (props) => {
     const sendCommentToContainer = () => {
         props.data.addComment(text.current.value)
     }
-    const sendValueInputToContainer = () => {
-        props.data.setNewInputText(text.current.value)
-    }
 
     return <div>
         <div className={commentsBlock_style.commentsName}>
@@ -19,7 +16,7 @@ const CommentsBlock = (props) => {
 
         <div className={commentsBlock_style.comments}>
             <div className={commentsBlock_style.textArea}>
-                <textarea value={props.data.inputText} ref={text} onChange={sendValueInputToContainer} name="textarea"></textarea>
+                <textarea value={props.data.inputText} ref={text} onChange={() => props.data.setInputText(text.current.value)} placeholder="Введіть комментар"></textarea>
             </div>
 
             <div>

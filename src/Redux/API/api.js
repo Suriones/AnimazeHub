@@ -25,7 +25,7 @@ export const animeAPI = {
 
 export const commentsAPI = {
     addCommentToAnimePage(text, animeID) {
-        return instance.post("commentsData", { text: text, animeId: animeID, newsId: null });
+        return instance.post("commentsData", { text: text, animeId: animeID });
     },
     showAnimeIdFirstCommentsPage(animeID) {
         return instance.get(`commentsData?animeId_like=${animeID}&_page=1&_limit=5`).then(response => {

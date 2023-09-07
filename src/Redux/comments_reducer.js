@@ -20,8 +20,7 @@ const comments_reducer = (state = initialState, action) => {
         stateCopy.comments = state.comments.map(item => ({
             id: item.id,
             text: item.text,
-            animeId: item.animeId,
-            newsId: item.newsId
+            animeId: item.animeId
         }));
 
         return stateCopy;
@@ -86,13 +85,12 @@ export const commentsDAL = {
         }
     },
     addCommentToAnimePage(text, animeID) {
+        if (text === "") { text = "Empty comment" };
         return (dispatch) => {
-            if (text === "") {text = "Empty comment";}
             commentsAPI.addCommentToAnimePage(text, animeID).then(function () {
                 commentsAPI.showAnimeIdLastCommentsPage(animeID).then(response => {
                     dispatch({ type: "setCommentsActivePage", activePage: response.activePage });
                     dispatch({ type: "setCommentsState", newState: response.data });
-                    dispatch({ type: "clearInputText" });
                     dispatch({ type: "refreshCommentsDB" });
                 })
             })

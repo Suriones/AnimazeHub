@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import AnimeFullPage from "./AnimeFullPage";
-import CommentsBlockContainer from "../../../CommentsBlock/CommentsBlockContainer.jsx";
-
+import CommentsBlockContainer from "../../../../CommentsBlock/CommentsBlockContainer.jsx";
 
 const AnimeFullPageContainer = (props) => {
 
@@ -15,7 +14,6 @@ const AnimeFullPageContainer = (props) => {
             commentsData: props.commentsData,
             dispatch: props.dispatch,
             commentsDAL: props.commentsDAL,
-            inputText: props.animeData.inputText,
             animeID: animeID,
             checkerUpdate: props.commentsData.checkerUpdate
         }

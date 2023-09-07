@@ -1,17 +1,4 @@
-.news {
-    p {
-        color: white;
-    }
-}
-
-.loading {
-    color: white;
-    position: absolute;
-    top: 30%;
-    left: 48%;
-}
-
-.block {
+.addBlock {
 
     display: inline-block;
     width: 200px;
@@ -24,7 +11,7 @@
     }
 }
 
-.block:hover {
+.addBlock:hover {
     background-color: gold;
     cursor: pointer;
 }
