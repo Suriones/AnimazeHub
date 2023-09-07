@@ -1,11 +1,11 @@
 import React from "react";
-import news_style from "./News.scss";
 import NewsBlock from "./NewsBlock/NewsBlock.jsx"
+import news_style from "./News.scss";
 
 const News = (props) => {
 
-    const sendToBLL = () => {
-        props.dispatch(props.newsBLL.postNews(props.news.length, "News"));
+    const sendToDAL = () => {
+        props.dispatch(props.newsDAL.postNews(props.news.length, "News"));
     }
 
     if (!props.news.length) {
@@ -16,7 +16,7 @@ const News = (props) => {
                 {props.news.map(n => {
                     return <NewsBlock id={n.id} name={n.name} key={n.id} />
                 })}
-                <div className={news_style.block} onClick={sendToBLL}><p>Додати новину</p></div>
+                <div className={news_style.block} onClick={sendToDAL}><p>Додати новину</p></div>
             </div>
         );
     }

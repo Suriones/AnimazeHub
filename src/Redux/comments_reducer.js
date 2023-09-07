@@ -61,7 +61,7 @@ const comments_reducer = (state = initialState, action) => {
     }
 }
 
-export const commentsBLL = {
+export const commentsDAL = {
     getAnimeIdCountComments(animeID) {
         return (dispatch) => {
             commentsAPI.getAnimeIdCountComments(animeID).then(count => {
@@ -79,9 +79,9 @@ export const commentsBLL = {
     },
     showAnimeIdActiveCommentsPage(selectedPage, animeID) {
         return (dispatch) => {
-            commentsAPI.showAnimeIdActiveCommentsPage(selectedPage.target.id, animeID).then(data => {
+            commentsAPI.showAnimeIdActiveCommentsPage(selectedPage, animeID).then(data => {
                 dispatch({ type: "setCommentsState", newState: data });
-                dispatch({ type: "setCommentsActivePage", activePage: selectedPage.target.id });
+                dispatch({ type: "setCommentsActivePage", activePage: selectedPage });
             });
         }
     },

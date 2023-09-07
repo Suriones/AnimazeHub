@@ -1,6 +1,6 @@
 import React from "react";
-import animeBlock_style from "./AnimeBlock.scss";
 import { NavLink } from "react-router-dom";
+import animeBlock_style from "./AnimeBlock.scss";
 
 const AnimeBlock = (props) => {
     return (

@@ -1,6 +1,6 @@
 import React from "react";
-import anime_style from "./Anime.scss";
 import AnimeBlock from "./AnimeBlock/AnimeBlock";
+import anime_style from "./Anime.scss";
 
 const Anime = (props) => {
     
