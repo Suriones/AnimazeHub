@@ -43,7 +43,7 @@ const news_reducer = (state = initialState, action) => {
     }
 }
 
-export const newsBLL = {
+export const newsDAL = {
     getAll() {
         return (dispatch) => {
             newsAPI.getAll().then(data => {

@@ -2,8 +2,8 @@ import { animeAPI } from "./API/api.js";
 
 const initialState = {
     anime: [],
-    inputText: "",
-    checkerUpdate: false
+    checkerUpdate: false,
+    inputText: ""
 };
 
 const anime_reducer = (state = initialState, action) => {
@@ -59,7 +59,7 @@ const anime_reducer = (state = initialState, action) => {
     }
 }
 
-export const animeBLL = {
+export const animeDAL = {
     getAll() {
         return (dispatch) => {
             animeAPI.getAll().then(data => {

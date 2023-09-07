@@ -39,260 +39,36 @@
     {
       "id": 5,
       "name": "News"
+    },
+    {
+      "id": 6,
+      "name": "News"
+    },
+    {
+      "id": 7,
+      "name": "News"
+    },
+    {
+      "id": 8,
+      "name": "News"
+    },
+    {
+      "id": 9,
+      "name": "News"
     }
   ],
   "commentsData": [
     {
-      "id": 0,
-      "text": "good anime",
+      "text": "WP!",
+      "animeId": 1,
+      "newsId": null,
+      "id": 1
+    },
+    {
+      "text": "GOOD!",
       "animeId": 0,
-      "newsId": null
-    },
-    {
-      "id": 1,
-      "text": "wp!",
-      "animeId": 1,
-      "newsId": null
-    },
-    {
-      "id": 2,
-      "text": "BEST!",
-      "animeId": 1,
-      "newsId": null
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
       "newsId": null,
-      "id": 3
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 4
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 5
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 6
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 7
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 8
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 9
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 10
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 11
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 12
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 13
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 14
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 15
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 16
-    },
-    {
-      "text": "asd",
-      "animeId": 1,
-      "newsId": null,
-      "id": 17
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 18
-    },
-    {
-      "text": "",
-      "animeId": 1,
-      "newsId": null,
-      "id": 19
-    },
-    {
-      "text": "",
-      "animeId": 1,
-      "newsId": null,
-      "id": 20
-    },
-    {
-      "text": "",
-      "animeId": 1,
-      "newsId": null,
-      "id": 21
-    },
-    {
-      "text": "",
-      "animeId": 1,
-      "newsId": null,
-      "id": 22
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 23
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 24
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 25
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 26
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 27
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 28
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 29
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 30
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 31
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 32
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 33
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 34
-    },
-    {
-      "text": "s",
-      "animeId": 1,
-      "newsId": null,
-      "id": 35
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 36
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 37
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 38
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 39
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 40
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 1,
-      "newsId": null,
-      "id": 41
+      "id": 2
     }
   ]
 }

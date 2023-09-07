@@ -1,0 +1,28 @@
+.commentsName {
+    h1 {
+        padding: 10px;
+        color: white;
+    }
+}
+
+.comments {
+    display: flex;
+
+    .textArea {
+        padding: 0 10px 10px 10px;
+
+        textarea {
+            width: 350px;
+            height: 50px;
+        }
+    }
+}
+
+.active {
+    background-color: gold;
+    color: black;
+}
+
+.commentsPages {
+    margin: 0 0 10px 10px;
+}
