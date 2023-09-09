@@ -62,38 +62,33 @@ const comments_reducer = (state = initialState, action) => {
 
 export const commentsDAL = {
     getAnimeIdCountComments(animeID) {
-        return (dispatch) => {
-            commentsAPI.getAnimeIdCountComments(animeID).then(count => {
-                dispatch({ type: "setAnimeIDCommentsLength", commentsLength: count });
-            })
+        return async (dispatch) => {
+            const count = await commentsAPI.getAnimeIdCountComments(animeID);
+            dispatch({ type: "setAnimeIDCommentsLength", commentsLength: count });
         }
     },
     showAnimeIdFirstCommentsPage(animeID) {
-        return (dispatch) => {
-            commentsAPI.showAnimeIdFirstCommentsPage(animeID).then(data => {
-                dispatch({ type: "setCommentsState", newState: data });
-                dispatch({ type: "setCommentsActivePage", activePage: 1 });
-            })
+        return async (dispatch) => {
+            const data = await commentsAPI.showAnimeIdFirstCommentsPage(animeID);
+            dispatch({ type: "setCommentsState", newState: data });
+            dispatch({ type: "setCommentsActivePage", activePage: 1 });
         }
     },
     showAnimeIdActiveCommentsPage(selectedPage, animeID) {
-        return (dispatch) => {
-            commentsAPI.showAnimeIdActiveCommentsPage(selectedPage, animeID).then(data => {
-                dispatch({ type: "setCommentsState", newState: data });
-                dispatch({ type: "setCommentsActivePage", activePage: selectedPage });
-            });
+        return async (dispatch) => {
+            const data = await commentsAPI.showAnimeIdActiveCommentsPage(selectedPage, animeID);
+            dispatch({ type: "setCommentsState", newState: data });
+            dispatch({ type: "setCommentsActivePage", activePage: selectedPage });
         }
     },
     addCommentToAnimePage(text, animeID) {
         if (text === "") { text = "Empty comment" };
-        return (dispatch) => {
-            commentsAPI.addCommentToAnimePage(text, animeID).then(function () {
-                commentsAPI.showAnimeIdLastCommentsPage(animeID).then(response => {
-                    dispatch({ type: "setCommentsActivePage", activePage: response.activePage });
-                    dispatch({ type: "setCommentsState", newState: response.data });
-                    dispatch({ type: "refreshCommentsDB" });
-                })
-            })
+        return async (dispatch) => {
+            await commentsAPI.addCommentToAnimePage(text, animeID);
+            const response = await commentsAPI.showAnimeIdLastCommentsPage(animeID);
+            dispatch({ type: "setCommentsActivePage", activePage: response.activePage });
+            dispatch({ type: "setCommentsState", newState: response.data });
+            dispatch({ type: "refreshCommentsDB" });
         }
     }
 }

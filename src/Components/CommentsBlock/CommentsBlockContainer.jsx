@@ -5,14 +5,15 @@ import CommentPage from "./CommentPage/CommentPage.jsx";
 import Comment from "./Comment/Comment.jsx"
 
 const CommentsBlockContainer = (props) => {
-
+    
     // Для використання блоку комментарів, йому потрібно передати пропсами об`єкт data, який має вигляд:
     //
     //   commentsData: props.commentsData,
     //   dispatch: props.dispatch,
     //   commentsDAL: props.commentsDAL,
     //   animeID: animeID,
-    //   checkerUpdate: props.commentsData.checkerUpdate
+    //   checkerUpdate: props.commentsData.checkerUpdate,
+    //   authData: props.authData
     //
 
     useEffect(() => {props.data.dispatch(props.data.commentsDAL.showAnimeIdFirstCommentsPage(props.data.animeID))}, []);
@@ -31,11 +32,17 @@ const CommentsBlockContainer = (props) => {
     let commentsPages = [];
 
     for (let i = 1; i < commentsPagesCount + 1; i++) {
-        commentsPages.push(<CommentPage key={i + "key"} id={i} className={props.data.commentsData.activePage == i ? commentsBlock_style.active : "not active"} showAnimeIdActiveCommentsPage={showAnimeIdActiveCommentsPage} />);
+        commentsPages.push(<CommentPage key={i + "key"} id={i} className={props.data.commentsData.activePage == i ? commentsBlock_style.active : commentsBlock_style.notActive} showAnimeIdActiveCommentsPage={showAnimeIdActiveCommentsPage} />);
     }
     //-------
 
     //------- Створювання комментарів і їх функції
+
+    let placeholder = "Щоб залишити коментар, потрібно зареєструватись!";
+
+    if (props.data.authData.authStatus === true) {
+        placeholder = "Введіть коментар";
+    }
 
     const [inputText, setInputText] = useState("");
 
@@ -60,7 +67,9 @@ const CommentsBlockContainer = (props) => {
         inputText: inputText,
         setInputText: setInputText,
         comments: comments,
-        commentsPages: commentsPages
+        commentsPages: commentsPages,
+        placeholder: placeholder,
+        authStatus: props.data.authData.authStatus
     }
 
     return <CommentsBlock data={data} />

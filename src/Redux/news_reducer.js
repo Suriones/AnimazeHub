@@ -45,17 +45,15 @@ const news_reducer = (state = initialState, action) => {
 
 export const newsDAL = {
     getAll() {
-        return (dispatch) => {
-            newsAPI.getAll().then(data => {
-                dispatch({ type: "setNewsState", newState: data });
-            });
+        return async (dispatch) => {
+            const data = await newsAPI.getAll();
+            dispatch({ type: "setNewsState", newState: data });
         }
     },
     postNews(id, text) {
-        return (dispatch) => {
-            newsAPI.postNews(id, text).then(function () {
-                dispatch({ type: "refreshNewsDB" });
-            });
+        return async (dispatch) => {
+            await newsAPI.postNews(id, text)
+            dispatch({ type: "refreshNewsDB" });
         }
     }
 }
