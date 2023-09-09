@@ -5,7 +5,7 @@ import CommentPage from "./CommentPage/CommentPage.jsx";
 import Comment from "./Comment/Comment.jsx"
 
 const CommentsBlockContainer = (props) => {
-    
+
     // Для використання блоку комментарів, йому потрібно передати пропсами об`єкт data, який має вигляд:
     //
     //   commentsData: props.commentsData,

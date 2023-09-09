@@ -11,6 +11,30 @@
       "password": "",
       "admin": true,
       "id": 2
+    },
+    {
+      "login": "asd",
+      "password": "",
+      "admin": false,
+      "id": 3
+    },
+    {
+      "login": "gh",
+      "password": "",
+      "admin": false,
+      "id": 4
+    },
+    {
+      "login": " n",
+      "password": "",
+      "admin": false,
+      "id": 5
+    },
+    {
+      "login": "hgvm",
+      "password": "",
+      "admin": true,
+      "id": 6
     }
   ],
   "animeData": [
@@ -48,6 +72,30 @@
     },
     {
       "id": 4,
+      "name": "News"
+    },
+    {
+      "id": 5,
+      "name": "News"
+    },
+    {
+      "id": 6,
+      "name": "News"
+    },
+    {
+      "id": 7,
+      "name": "News"
+    },
+    {
+      "id": 8,
+      "name": "News"
+    },
+    {
+      "id": 9,
+      "name": "News"
+    },
+    {
+      "id": 10,
       "name": "News"
     }
   ],
@@ -456,6 +504,31 @@
       "text": "Empty comment",
       "animeId": 1,
       "id": 81
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 82
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 83
+    },
+    {
+      "text": "sfh",
+      "animeId": 1,
+      "id": 84
+    },
+    {
+      "text": "fgh",
+      "animeId": 1,
+      "id": 85
+    },
+    {
+      "text": "dfg",
+      "animeId": 1,
+      "id": 86
     }
   ]
 }
