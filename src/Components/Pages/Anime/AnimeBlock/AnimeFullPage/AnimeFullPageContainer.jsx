@@ -2,12 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import AnimeFullPage from "./AnimeFullPage";
 import CommentsBlockContainer from "../../../../CommentsBlock/CommentsBlockContainer.jsx";
+import PageNotFound from "../../../PageNotFound/PageNotFound";
 
 const AnimeFullPageContainer = (props) => {
     const animeID = parseInt(Object.values(useParams()));
 
     if (!props.animeData.anime[animeID]) {
-        return (<AnimeFullPage />);
+        return (<PageNotFound />);
     } else {
         const commentsData = {
             commentsData: props.commentsData,
