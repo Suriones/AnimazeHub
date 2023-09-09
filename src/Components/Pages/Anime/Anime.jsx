@@ -3,7 +3,7 @@ import AnimeBlock from "./AnimeBlock/AnimeBlock";
 import Loading from "../../Loading/Loading.jsx"
 
 const Anime = (props) => {
-    
+
     if (!props.anime.length) {
         return <Loading />
     } else {

@@ -4,6 +4,17 @@ const instance = axios.create({
     baseURL: "http://localhost:3001/"
 })
 
+export const authAPI = {
+    addUser(user) {
+        return instance.post("usersData", { login: user.login, password: user.password, admin: user.admin });
+    },
+    getUsers() {
+        return instance.get("usersData").then(response => {
+            return response.data;
+        })
+    }
+}
+
 export const newsAPI = {
     postNews(id, name) {
         return instance.post("newsData", { id: id, name: name });

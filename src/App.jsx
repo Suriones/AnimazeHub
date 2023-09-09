@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import Header from "./Components/Header/Header.jsx";
 import News from "./Components/Pages/News/News.jsx"
-import Anime from "./Components/Pages/Anime/Anime.jsx"
-import AnimeFullPageContainer from "./Components/Pages/Anime/AnimeBlock/AnimeFullPage/AnimeFullPageContainer.jsx";
 import { Routes, Route } from "react-router-dom";
-import PageNotFound from "./Components/PageNotFound/PageNotFound.jsx";
+import Loading from "./Components/Loading/Loading.jsx";
+
+const Register = lazy(() => import("./Components/Pages/Auth/Register/Register.jsx"));
+const Login = lazy(() => import("./Components/Pages/Auth/Login/Login.jsx"));
+const Anime = lazy(() => import("./Components/Pages/Anime/Anime.jsx"));
+const AnimeFullPageContainer = lazy(() => import("./Components/Pages/Anime/AnimeBlock/AnimeFullPage/AnimeFullPageContainer.jsx"));
+const PageNotFound = lazy(() => import("./Components/Pages/PageNotFound/PageNotFound.jsx"));
 
 const App = (props) => {
 
@@ -12,19 +16,19 @@ const App = (props) => {
         props.dispatch(props.animeDAL.getAll());
     }, [props.state.animeData.checkerUpdate]);
 
-    useEffect(() => {
-        props.dispatch(props.newsDAL.getAll());
-    }, [props.state.newsData.checkerUpdate]);
-
     return (
         <div>
-            <Header />
-            <Routes>
-                <Route path="/" element={<News news={props.state.newsData.news} dispatch={props.dispatch} newsDAL={props.newsDAL} />} />
-                <Route path="/anime" element={<Anime anime={props.state.animeData.anime} />} />
-                <Route path="/anime/:animeId" element={<AnimeFullPageContainer animeData={props.state.animeData} commentsData={props.state.commentsData} dispatch={props.dispatch} animeDAL={props.animeDAL} commentsDAL={props.commentsDAL} />} />
-                <Route path="*" element={<PageNotFound />} />
-            </Routes>
+            <Header authData={props.state.authData}/>
+            <Suspense fallback={<Loading />}>
+                <Routes>
+                    <Route path="/login" element={<Login authData={props.state.authData} dispatch={props.dispatch} authDAL={props.authDAL}/>} />
+                    <Route path="/register" element={<Register authData={props.state.authData} dispatch={props.dispatch} authDAL={props.authDAL}/>} />
+                    <Route path="/" element={<News checkerUpdate={props.state.newsData.checkerUpdate} news={props.state.newsData.news} dispatch={props.dispatch} newsDAL={props.newsDAL} authData={props.state.authData} />} />
+                    <Route path="/anime" element={<Anime anime={props.state.animeData.anime} />} />
+                    <Route path="/anime/:animeId" element={<AnimeFullPageContainer animeData={props.state.animeData} commentsData={props.state.commentsData} authData={props.state.authData} dispatch={props.dispatch} animeDAL={props.animeDAL} commentsDAL={props.commentsDAL} />} />
+                    <Route path="*" element={<PageNotFound />} />
+                </Routes>
+            </Suspense>
         </div>
     );
 }

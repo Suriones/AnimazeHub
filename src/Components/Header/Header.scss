@@ -1,6 +1,51 @@
 body {
     margin: 0;
     background-color: #0768b5;
+
+    .header {
+        height: 80px;
+        background-color: #005090;
+        display: flex;
+        position: relative;
+
+        .header_button {
+            padding-top: 30px;
+            display: flex;
+            flex-shrink: 0;
+            min-width: 100px;
+
+            .active {
+                color: gold;
+            }
+
+            .no_active {
+                color: white;
+            }
+
+            a {
+                text-decoration: none;
+
+            }
+        }
+
+        .header_button:first-child {
+            margin-left: 30px;
+        }
+
+        .vertical_line {
+            background-color: white;
+            width: 1px;
+            margin: 0 30px 0 30px;
+            flex-shrink: 0;
+        }
+
+        .username {
+            color: white;
+            margin: 0 20px 0 20px;
+            padding-top: 30px;
+            flex-shrink: 0;
+        }
+    }
 }
 
 body::-webkit-scrollbar {
@@ -14,33 +59,4 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background-color: white;
-}
-
-.header {
-    height: 80px;
-    background-color: #005090;
-    display: flex;
-
-    .header_button {
-        padding-top: 30px;
-        display: flex;
-        flex-direction: column;
-
-        .active {
-            color: gold;
-        }
-
-        .no_active {
-            color: white;
-        }
-
-        a {
-            text-decoration: none;
-            width: 100px;
-        }
-    }
-}
-
-.header:first-child {
-    padding-left: 30px;
 }

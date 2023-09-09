@@ -1,11 +1,11 @@
 import React from "react";
 import animeFullPage_style from "./AnimeFullPage.scss";
-import Loading from "../../../../Loading/Loading.jsx"
+import PageNotFound from "../../../PageNotFound/PageNotFound.jsx";
 
-const AnimeFullPage = (props) => {
+const AnimeFullPage = React.memo((props) => {
 
     if (!props.data) {
-        return <Loading />
+        return <PageNotFound />
     } else {
         return (
             <div className={animeFullPage_style.anime}>
@@ -36,6 +36,6 @@ const AnimeFullPage = (props) => {
             </div>
         );
     }
-}
+})
 
 export default AnimeFullPage;

@@ -4,7 +4,6 @@ import AnimeFullPage from "./AnimeFullPage";
 import CommentsBlockContainer from "../../../../CommentsBlock/CommentsBlockContainer.jsx";
 
 const AnimeFullPageContainer = (props) => {
-
     const animeID = parseInt(Object.values(useParams()));
 
     if (!props.animeData.anime[animeID]) {
@@ -15,7 +14,8 @@ const AnimeFullPageContainer = (props) => {
             dispatch: props.dispatch,
             commentsDAL: props.commentsDAL,
             animeID: animeID,
-            checkerUpdate: props.commentsData.checkerUpdate
+            checkerUpdate: props.commentsData.checkerUpdate,
+            authData: props.authData
         }
 
         return (<div><AnimeFullPage data={props.animeData.anime[animeID]} /><CommentsBlockContainer data={commentsData} /></div>);

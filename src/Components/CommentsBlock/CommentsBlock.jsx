@@ -16,11 +16,11 @@ const CommentsBlock = (props) => {
 
         <div className={commentsBlock_style.comments}>
             <div className={commentsBlock_style.textArea}>
-                <textarea value={props.data.inputText} ref={text} onChange={() => props.data.setInputText(text.current.value)} placeholder="Введіть комментар"></textarea>
+                <textarea value={props.data.inputText} disabled={!props.data.authStatus} ref={text} onChange={() => props.data.setInputText(text.current.value)} placeholder={props.data.placeholder}></textarea>
             </div>
 
             <div>
-                <button onClick={sendCommentToContainer}>Відправити</button>
+                <button disabled={!props.data.authStatus} onClick={sendCommentToContainer}>Відправити</button>
             </div>
 
         </div>

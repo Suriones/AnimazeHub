@@ -44,7 +44,7 @@ const anime_reducer = (state = initialState, action) => {
             stateCopy = _createStateCopyAnime();
             stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
             return stateCopy;
-            
+
         default:
             return state;
     }
@@ -52,10 +52,9 @@ const anime_reducer = (state = initialState, action) => {
 
 export const animeDAL = {
     getAll() {
-        return (dispatch) => {
-            animeAPI.getAll().then(data => {
-                dispatch({ type: "setAnimeState", newState: data })
-            });
+        return async (dispatch) => {
+            const data = await animeAPI.getAll();
+            dispatch({ type: "setAnimeState", newState: data });
         }
     }
 }
