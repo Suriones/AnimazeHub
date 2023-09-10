@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Loading from "./Components/Loading/Loading.jsx";
+import Loading from "./Components/Pages/Loading/Loading.jsx";
 import NewsContainer from "./Components/Pages/News/NewsContainer.jsx"
 import HeaderContainer from "./Components/Header/HeaderContainer.jsx";
 

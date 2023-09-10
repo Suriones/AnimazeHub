@@ -5,6 +5,7 @@ const NewsBlock = (props) => {
     return (
         <div className={newsBlock_style.block}>
             <p>{props.name} {props.id+1}</p>
+            <p>{props.value}</p>
         </div>
     )
 }

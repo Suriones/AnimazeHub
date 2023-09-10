@@ -50,9 +50,9 @@ export const newsDAL = {
             dispatch({ type: "setNewsState", newState: data });
         }
     },
-    postNews(id, text) {
+    postNews(id, text, value) {
         return async (dispatch) => {
-            await newsAPI.postNews(id, text)
+            await newsAPI.postNews(id, text, value)
             dispatch({ type: "refreshNewsDB" });
         }
     }

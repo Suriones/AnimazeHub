@@ -33,12 +33,10 @@ const Register = React.memo((props) => {
     })
 
     return (<div className={register_style.register}>
-        <form>
-            <p><input id="registerUsername" ref={login} placeholder="Username"></input></p>
-            <p><input id="registerPassword" ref={password} placeholder="Password"></input></p>
-            <p><input id="registerRole" ref={admin} type="checkbox" />Роль адміністратора</p>
-            <p><button id="registerButton" onClick={createUser}>Реєстрація</button></p>
-        </form>
+        <p><input id="registerUsername" ref={login} placeholder="Username"></input></p>
+        <p><input id="registerPassword" ref={password} placeholder="Password"></input></p>
+        <p><input id="registerRole" ref={admin} type="checkbox" />Роль адміністратора</p>
+        <p><button id="registerButton" onClick={createUser}>Реєстрація</button></p>
     </div>)
 })
 

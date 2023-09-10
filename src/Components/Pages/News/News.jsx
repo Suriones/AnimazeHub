@@ -1,10 +1,9 @@
 import React from "react";
-import news_style from "./News.scss";
 
 const News = (props) => {
-    return <div className={news_style.news}>
-        {props.newsComponents}
+    return <div>
         {props.addNews}
+        {props.newsComponents}
     </div>
 }
 
