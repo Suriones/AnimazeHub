@@ -18,14 +18,14 @@
     }
 }
 
-.notActive {
-    background-color: white;
-}
-
-.active {
-    background-color: gold;
-}
-
 .commentsPages {
     margin: 0 0 10px 10px;
+
+    .notActive {
+        background-color: white;
+    }
+
+    .active {
+        background-color: gold;
+    }
 }

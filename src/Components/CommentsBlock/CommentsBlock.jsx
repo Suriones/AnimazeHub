@@ -27,6 +27,7 @@ const CommentsBlock = (props) => {
         </div>
         {props.data.comments}
         <div className={commentsBlock_style.commentsPages}>{props.data.commentsPages}</div>
+
     </div>
 }
 

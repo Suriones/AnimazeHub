@@ -34,6 +34,7 @@ const CommentsBlockContainer = (props) => {
     for (let i = 1; i < commentsPagesCount + 1; i++) {
         commentsPages.push(<CommentPage key={i + "key"} id={i} className={props.data.commentsData.activePage == i ? commentsBlock_style.active : commentsBlock_style.notActive} showAnimeIdActiveCommentsPage={showAnimeIdActiveCommentsPage} />);
     }
+    
     //-------
 
     //------- Створювання комментарів і їх функції
@@ -51,10 +52,6 @@ const CommentsBlockContainer = (props) => {
         setInputText("");
     };
 
-    const setNewInputText = (value) => {
-        props.data.dispatch({ type: "setNewInputText", value: value });
-    }
-
     let comments = [];
     props.data.commentsData.comments.map(c => {
         comments.push(<Comment text={c.text} key={c.id} />)
@@ -63,7 +60,6 @@ const CommentsBlockContainer = (props) => {
 
     const data = {
         addComment: addComment,
-        setNewInputText: setNewInputText,
         inputText: inputText,
         setInputText: setInputText,
         comments: comments,

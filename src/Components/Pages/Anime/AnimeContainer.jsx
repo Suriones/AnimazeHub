@@ -1,6 +1,6 @@
 import React from "react";
 import AnimeBlock from "./AnimeBlock/AnimeBlock";
-import Loading from "../../Loading/Loading.jsx"
+import Loading from "../Loading/Loading.jsx"
 import Anime from "./Anime.jsx";
 
 const AnimeContainer = (props) => {

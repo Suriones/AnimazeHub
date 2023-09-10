@@ -16,8 +16,8 @@ export const authAPI = {
 }
 
 export const newsAPI = {
-    postNews(id, name) {
-        return instance.post("newsData", { id: id, name: name });
+    postNews(id, name, value) {
+        return instance.post("newsData", { id: id, name: name, value: value });
     },
     getAll() {
         return instance.get("newsData").then(response => {

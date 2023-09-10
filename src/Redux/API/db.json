@@ -11,30 +11,6 @@
       "password": "",
       "admin": true,
       "id": 2
-    },
-    {
-      "login": "asd",
-      "password": "",
-      "admin": false,
-      "id": 3
-    },
-    {
-      "login": "gh",
-      "password": "",
-      "admin": false,
-      "id": 4
-    },
-    {
-      "login": " n",
-      "password": "",
-      "admin": false,
-      "id": 5
-    },
-    {
-      "login": "hgvm",
-      "password": "",
-      "admin": true,
-      "id": 6
     }
   ],
   "animeData": [
@@ -56,47 +32,63 @@
   "newsData": [
     {
       "id": 0,
-      "name": "News"
+      "name": "News",
+      "value": "Сайт відкритий!"
     },
     {
       "id": 1,
-      "name": "News"
+      "name": "News",
+      "value": "Додали OnePiece"
     },
     {
       "id": 2,
-      "name": "News"
+      "name": "News",
+      "value": "Додали Death Note!"
     },
     {
       "id": 3,
-      "name": "News"
+      "name": "News",
+      "value": "hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello"
     },
     {
       "id": 4,
-      "name": "News"
+      "name": "News",
+      "value": "Додали реєстрацію, відтепер комментарі можуть лишати лише зареєстровані."
     },
     {
       "id": 5,
-      "name": "News"
+      "name": "News",
+      "value": "Хочете додати новину чи аніме? Реєструйтесь як адмін!"
     },
     {
       "id": 6,
-      "name": "News"
+      "name": "News",
+      "value": "Є базові аккаунти: логіни user чи admin. Без паролю!"
     },
     {
       "id": 7,
-      "name": "News"
+      "name": "News",
+      "value": "Дякую що зайшли, прекрасний сайт, чи не так?"
     },
     {
       "id": 8,
-      "name": "News"
+      "name": "News",
+      "value": "hello"
     },
     {
       "id": 9,
-      "name": "News"
+      "name": "News",
+      "value": "Перевірка додавання новини з ролі адміна:\n\nDone!"
     },
     {
       "id": 10,
-      "name": "News"
+      "name": "News",
+      "value": "Перевірка useState і автоочистка поля вводу новини: Done!"
+    },
+    {
+      "id": 11,
+      "name": "News",
+      "value": "Ще одна перевірка (секретна)"
     }
   ],
   "commentsData": [
@@ -529,6 +521,366 @@
       "text": "dfg",
       "animeId": 1,
       "id": 86
+    },
+    {
+      "text": "fgj",
+      "animeId": 1,
+      "id": 87
+    },
+    {
+      "text": "bnm,",
+      "animeId": 1,
+      "id": 88
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 89
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 90
+    },
+    {
+      "text": "sss",
+      "animeId": 1,
+      "id": 91
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 92
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 93
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 94
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 95
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 96
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 97
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 98
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 99
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 100
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 101
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 102
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 103
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 104
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 105
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 106
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 107
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 108
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 109
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 110
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 111
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 112
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 113
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 114
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 115
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 116
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 117
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 118
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 119
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 120
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 121
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 122
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 123
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 124
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 125
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 126
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 127
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 128
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 129
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 130
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 131
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 132
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 133
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 134
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 135
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 136
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 137
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 138
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 139
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 140
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 141
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 142
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 143
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 144
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 145
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 146
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 147
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 148
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 149
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 150
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 151
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 152
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 153
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 154
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 155
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 156
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 0,
+      "id": 157
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 158
     }
   ]
 }

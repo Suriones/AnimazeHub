@@ -25,11 +25,9 @@ const Login = React.memo((props) => {
     })
 
     return <div className={login_style.login}>
-        <form>
-            <p><input id="loginUsername" ref={login} placeholder="Username"></input></p>
-            <p><input id="loginPassword" ref={password} placeholder="Password" type="password"></input></p>
-            <p><button id="loginButton" onClick={loginUser}>Увійти</button></p>
-        </form>
+        <p><input id="loginUsername" ref={login} placeholder="Username"></input><img title="Стандартні аккаунти: user і admin, без паролю" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/52582/information-emoji-clipart-md.png"></img></p>
+        <p><input id="loginPassword" ref={password} placeholder="Password" type="password"></input></p>
+        <p><button id="loginButton" onClick={loginUser}>Увійти</button></p>
     </div>
 
 })
