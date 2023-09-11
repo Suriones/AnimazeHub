@@ -4,7 +4,8 @@ const initialState = {
     comments: [],
     checkerUpdate: false,
     commentsLength: 0,
-    activePage: 1
+    activePage: 1,
+    actualCommentsPagesGroup: 10
 };
 
 const comments_reducer = (state = initialState, action) => {
@@ -14,7 +15,8 @@ const comments_reducer = (state = initialState, action) => {
             comments: [],
             checkerUpdate: state.checkerUpdate,
             commentsLength: state.commentsLength,
-            activePage: state.activePage
+            activePage: state.activePage,
+            actualCommentsPagesGroup: state.actualCommentsPagesGroup
         }
 
         stateCopy.comments = state.comments.map(item => ({
@@ -55,6 +57,11 @@ const comments_reducer = (state = initialState, action) => {
             stateCopy.activePage = action.activePage;
             return stateCopy;
 
+        case "setActualCommentsPagesGroup":
+            stateCopy = _createStateCopyComments();
+            stateCopy.actualCommentsPagesGroup = action.actualCommentsPagesGroup;
+            return stateCopy;
+
         default:
             return state;
     }
@@ -82,13 +89,19 @@ export const commentsDAL = {
         }
     },
     addCommentToAnimePage(text, animeID) {
-        if (text === "") { text = "Empty comment" };
+        if (text === "") {text = "Empty"};
         return async (dispatch) => {
             await commentsAPI.addCommentToAnimePage(text, animeID);
             const response = await commentsAPI.showAnimeIdLastCommentsPage(animeID);
             dispatch({ type: "setCommentsActivePage", activePage: response.activePage });
             dispatch({ type: "setCommentsState", newState: response.data });
             dispatch({ type: "refreshCommentsDB" });
+
+            function actualCommentsPagesGroupFromActivePage(activePage) {
+                return Math.floor((activePage - 0.01) / 10) * 10 + 10;
+            }
+
+            dispatch({type: "setActualCommentsPagesGroup", actualCommentsPagesGroup: actualCommentsPagesGroupFromActivePage(response.activePage)})
         }
     }
 }

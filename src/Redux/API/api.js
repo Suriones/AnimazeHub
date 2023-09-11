@@ -31,6 +31,9 @@ export const animeAPI = {
         return instance.get("animeData").then(response => {
             return response.data;
         })
+    },
+    addAnime(anime) {
+        return instance.post("animeData", { name: anime.name, img: anime.img, description: anime.description, trailer: anime.trailer });
     }
 }
 
