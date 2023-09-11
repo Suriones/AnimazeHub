@@ -16,8 +16,11 @@ const CommentsBlockContainer = (props) => {
     //   authData: props.authData
     //
 
-    useEffect(() => {props.data.dispatch(props.data.commentsDAL.showAnimeIdFirstCommentsPage(props.data.animeID))}, []);
-    
+    useEffect(() => {
+        props.data.dispatch(props.data.commentsDAL.showAnimeIdFirstCommentsPage(props.data.animeID));
+        props.data.dispatch({type: "setActualCommentsPagesGroup", actualCommentsPagesGroup: 10});
+    }, []);
+
     useEffect(() => {
         props.data.dispatch(props.data.commentsDAL.getAnimeIdCountComments(props.data.animeID));
     }, [props.data.checkerUpdate]);
@@ -34,7 +37,21 @@ const CommentsBlockContainer = (props) => {
     for (let i = 1; i < commentsPagesCount + 1; i++) {
         commentsPages.push(<CommentPage key={i + "key"} id={i} className={props.data.commentsData.activePage == i ? commentsBlock_style.active : commentsBlock_style.notActive} showAnimeIdActiveCommentsPage={showAnimeIdActiveCommentsPage} />);
     }
-    
+
+    let CountPagesForward = () => {
+        props.data.dispatch({ type: "setActualCommentsPagesGroup", actualCommentsPagesGroup: props.data.commentsData.actualCommentsPagesGroup + 10 })
+    }
+
+    let CountPagesBack = () => {
+        props.data.dispatch({ type: "setActualCommentsPagesGroup", actualCommentsPagesGroup: props.data.commentsData.actualCommentsPagesGroup - 10 })
+    }
+
+    let commentsPagesActual = [];
+
+    for (let i = props.data.commentsData.actualCommentsPagesGroup - 10; i < props.data.commentsData.actualCommentsPagesGroup; i++) {
+        commentsPagesActual.push(commentsPages[i]);
+    }
+
     //-------
 
     //------- Створювання комментарів і їх функції
@@ -63,9 +80,13 @@ const CommentsBlockContainer = (props) => {
         inputText: inputText,
         setInputText: setInputText,
         comments: comments,
-        commentsPages: commentsPages,
+        commentsPagesActual: commentsPagesActual,
+        actualCommentsPagesGroup: props.data.commentsData.actualCommentsPagesGroup,
+        commentsPagesCount: commentsPagesCount,
         placeholder: placeholder,
-        authStatus: props.data.authData.authStatus
+        authStatus: props.data.authData.authStatus,
+        CountPagesForward: CountPagesForward,
+        CountPagesBack: CountPagesBack
     }
 
     return <CommentsBlock data={data} />

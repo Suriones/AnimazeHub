@@ -32,6 +32,12 @@ const auth_reducer = (state = initialState, action) => {
 
             return stateCopy;
             
+        case "exitUser":
+            stateCopy = _createStateCopyAuth();
+            stateCopy.authStatus = false;
+
+            return stateCopy;
+
         default:
             return state;
     }

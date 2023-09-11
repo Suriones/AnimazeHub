@@ -2,6 +2,7 @@ import React from "react";
 import animeFullPage_style from "./AnimeFullPage.scss";
 
 const AnimeFullPage = React.memo((props) => {
+    
     return (
         <div className={animeFullPage_style.anime}>
 

@@ -19,9 +19,7 @@ const Login = React.memo((props) => {
 
     const navigate = useNavigate();
     useEffect(() => {
-        if (props.authData.authStatus === true) {
-            navigate("/");
-        }
+        if (props.authData.authStatus === true) { navigate("/"); }
     })
 
     return <div className={login_style.login}>

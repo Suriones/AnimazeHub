@@ -56,6 +56,12 @@ export const animeDAL = {
             const data = await animeAPI.getAll();
             dispatch({ type: "setAnimeState", newState: data });
         }
+    },
+    addAnime(anime) {
+        return async (dispatch) => {
+            await animeAPI.addAnime(anime);
+            dispatch({ type: "refreshAnimeDB" });
+        }
     }
 }
 
