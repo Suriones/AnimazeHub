@@ -8,6 +8,7 @@ let server = http.createServer((req, res) => {
 
     let stream;
     switch (req.url) {
+        
         case '/build.js':
             res.writeHead(200, { 'Content-Type': 'application/javascript' });
             stream = fs.createReadStream('../build/build.js').pipe(res);
