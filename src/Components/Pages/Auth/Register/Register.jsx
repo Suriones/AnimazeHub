@@ -27,9 +27,7 @@ const Register = React.memo((props) => {
 
     const navigate = useNavigate();
     useEffect(() => {
-        if (props.authData.authStatus === true) {
-            navigate("/");
-        }
+        if (props.authData.authStatus === true) { navigate("/"); }
     })
 
     return (<div className={register_style.register}>
@@ -37,6 +35,8 @@ const Register = React.memo((props) => {
         <p><input id="registerPassword" ref={password} placeholder="Password"></input></p>
         <p><input id="registerRole" ref={admin} type="checkbox" />Роль адміністратора</p>
         <p><button id="registerButton" onClick={createUser}>Реєстрація</button></p>
+        <p className={register_style.information}>Зареєстрований user може писати коментарі.</p>
+        <p className={register_style.information}>Admin може додавати новини і аніме.</p>
     </div>)
 })
 

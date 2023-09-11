@@ -45,6 +45,11 @@ body {
             padding-top: 30px;
             flex-shrink: 0;
         }
+
+        .exit {
+            color: red;
+            cursor: pointer;
+        }
     }
 }
 

@@ -27,6 +27,13 @@
       "img": "https://media.kg-portal.ru/anime/d/deathnote/posters/deathnote_24.jpg",
       "description": "В основу сюжету фентезійного аніме серіалу «Зошит смерті» лягли культові японські комікси, так звана манга, написана відомим японським письменником Цугумі Оба. Мультсеріал роповідає історію про якийсь дивний зошит, що володіє магічними властивостями, і є ідеальною зброєю. Згідно з легендою, якщо написати на ній ім'я людини і вказати її прикмети, то незабаром її неодмінно спіткає смерть.Одного разу цей жахливий зошит опиняється в руках звичайнісінького школяра Лайта Ягамі. Батько хлопчика більшу частину свого життя присвятив роботі в поліції, намагаючись очистити суспільство від злочинності. Але як би він не намагався це зробити, світ навколо ставав лише гіршим. Заповітна мрія Лайта піти стопами свого батька. І ось коли в його руках виявляється така потужна зброя як зошит смерті, він починає вершити своє власне правосуддя, навіть не думаючи, до яких серйозних наслідків це може призвести.",
       "trailer": "https://www.youtube-nocookie.com/embed/NlJZ-YgAt-c?si=oHLnbU95YmB_OuLi"
+    },
+    {
+      "name": "test",
+      "img": "https://wallpapercave.com/wp/wp5194133.jpg",
+      "description": "test",
+      "trailer": "https://www.youtube.com/",
+      "id": 2
     }
   ],
   "newsData": [
@@ -89,6 +96,11 @@
       "id": 11,
       "name": "News",
       "value": "Ще одна перевірка (секретна)"
+    },
+    {
+      "id": 12,
+      "name": "News",
+      "value": "Тепер адмін може додавати Аніме!"
     }
   ],
   "commentsData": [
@@ -549,338 +561,633 @@
     },
     {
       "text": "Empty comment",
-      "animeId": 0,
-      "id": 92
+      "animeId": 1,
+      "id": 158
     },
     {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 93
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 94
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 95
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 96
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 97
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 98
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 99
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 100
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 101
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 102
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 103
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 104
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 105
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 106
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 107
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 108
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 109
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 110
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 111
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 112
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 113
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 114
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 115
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 116
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 117
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 118
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 119
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 120
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 121
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 122
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 123
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 124
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 125
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 126
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 127
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 128
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 129
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 130
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 131
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 132
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 133
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 134
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 135
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 136
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 137
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 138
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 139
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 140
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 141
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 142
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 143
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 144
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 145
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 146
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 147
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 148
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 149
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 150
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 151
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 152
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 153
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 154
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 155
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 156
-    },
-    {
-      "text": "Empty comment",
-      "animeId": 0,
-      "id": 157
+      "text": "asdasd",
+      "animeId": 1,
+      "id": 159
     },
     {
       "text": "Empty comment",
       "animeId": 1,
-      "id": 158
+      "id": 160
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 161
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 162
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 163
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 164
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 165
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 166
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 167
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 168
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 169
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 170
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 171
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 172
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 173
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 174
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 175
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 176
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 177
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 178
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 179
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 180
+    },
+    {
+      "text": "s",
+      "animeId": 1,
+      "id": 181
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 182
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 183
+    },
+    {
+      "text": "Empty comment",
+      "animeId": 1,
+      "id": 184
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 185
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 186
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 187
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 188
+    },
+    {
+      "text": "asd",
+      "animeId": 1,
+      "id": 189
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 190
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 191
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 192
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 193
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 194
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 195
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 196
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 197
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 198
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 199
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 200
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 201
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 202
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 203
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 204
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 205
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 206
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 207
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 208
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 209
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 210
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 211
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 212
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 213
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 214
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 215
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 216
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 217
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 218
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 219
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 220
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 221
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 222
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 223
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 224
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 225
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 226
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 227
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 228
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 229
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 230
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 231
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 232
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 233
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 234
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 235
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 236
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 237
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 238
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 239
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 240
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 241
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 242
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 243
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 244
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 245
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 246
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 247
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 248
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 249
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 250
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 251
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 252
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 253
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 254
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 255
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 256
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 257
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 258
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 259
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 260
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 261
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 262
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 263
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 264
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 265
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 266
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 267
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 268
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 269
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 270
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 271
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 272
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 273
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 274
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 275
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 276
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 277
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 278
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 279
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 280
+    },
+    {
+      "text": "",
+      "animeId": 1,
+      "id": 281
+    },
+    {
+      "text": "Empty",
+      "animeId": 1,
+      "id": 282
+    },
+    {
+      "text": "Empty",
+      "animeId": 1,
+      "id": 283
     }
   ]
 }
