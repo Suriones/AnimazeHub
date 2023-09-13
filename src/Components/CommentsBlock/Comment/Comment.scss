@@ -1,13 +1,9 @@
 .comment {
-    background-color: black;
-    width: 250px;
-    min-height: 30px;
-    margin: 10px 0 10px 10px;
-    opacity: 80%;
+    margin: 10px;
+    border-radius: 10px;
 
-    p {
-        color: white;
-        padding: 5px;
-        word-wrap: break-word;
+    li {
+        min-height: 30px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .25);
     }
 }

@@ -1,35 +1,53 @@
 .commentsName {
-    h1 {
+    p {
         padding: 10px;
-        color: white;
     }
 }
 
 .comments {
     display: flex;
+    background-color: #F2EAED;
+    border: 0;
 
-    .textArea {
-        padding: 0 10px 10px 10px;
-
-        textarea {
-            width: 350px;
-            height: 50px;
-        }
+    textarea {
+        width: 450px;
+        height: 100px;
+        margin: 10px;
+        background-color: white;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .25);
     }
+}
+
+.sendButton {
+    margin: 10px;
+    width: 80px;
 }
 
 .commentsPages {
     margin: 0 0 10px 10px;
 
-    .notActive {
-        background-color: white;
-    }
-
     .active {
-        background-color: gold;
+        a {
+            color: black;
+            font-weight: 700;
+            background-color: #edf2ea;
+        }
     }
-}
 
-.buttonListPages {
-    margin: 10px;
+    button {
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    #listPagesBack:disabled, #listPagesForward:disabled {
+        a {
+            color: gray;
+            cursor: default;
+        }
+    }
+
 }

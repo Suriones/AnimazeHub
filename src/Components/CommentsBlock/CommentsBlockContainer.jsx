@@ -56,10 +56,10 @@ const CommentsBlockContainer = (props) => {
 
     //------- Створювання комментарів і їх функції
 
-    let placeholder = "Щоб залишити коментар, потрібно зареєструватись!";
+    let placeholder = "You need to register to write a comment!";
 
     if (props.data.authData.authStatus === true) {
-        placeholder = "Введіть коментар";
+        placeholder = "Write a comment...";
     }
 
     const [inputText, setInputText] = useState("");

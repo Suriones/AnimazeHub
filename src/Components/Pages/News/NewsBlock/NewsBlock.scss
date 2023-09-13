@@ -1,25 +1,38 @@
 .block {
-
-    display: inline-block;
-    width: 200px;
-    height: 150px;
-    padding: 10px;
+    width: 300px;
     margin: 10px;
-    background-color: #005090;
-    border: 1px black solid;
-    overflow-y: scroll;
 
-    p {
-        color: white;
-        word-wrap: break-word;
-        margin: 10px 5px 0 0;
+    .bodyBlock {
+        min-height: 100px;
+        max-height: 210px;
+        overflow-y: auto;
+
+        .postNews {
+            margin-left: 8px;
+        }
+    }
+
+
+}
+
+.addNews {
+    padding: 10px;
+
+    textarea {
+        width: 260px;
+        margin: auto;
+    }
+
+    button {
+        margin: 10px 0 0 8px;
+        width: 100px;
     }
 }
 
-.block::-webkit-scrollbar {
+.bodyBlock::-webkit-scrollbar {
     width: 3px;
 }
 
-.block::-webkit-scrollbar-thumb {
-    background-color: #0768b5;
+.bodyBlock::-webkit-scrollbar-thumb {
+    background-color: #F2EAED;
 }

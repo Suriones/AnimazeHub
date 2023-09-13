@@ -30,14 +30,26 @@ const Register = React.memo((props) => {
         if (props.authData.authStatus === true) { navigate("/"); }
     })
 
-    return (<div className={register_style.register}>
-        <p><input id="registerUsername" ref={login} placeholder="Username"></input></p>
-        <p><input id="registerPassword" ref={password} placeholder="Password"></input></p>
-        <p><input id="registerRole" ref={admin} type="checkbox" />Роль адміністратора</p>
-        <p><button id="registerButton" onClick={createUser}>Реєстрація</button></p>
-        <p className={register_style.information}>Зареєстрований user може писати коментарі.</p>
-        <p className={register_style.information}>Admin може додавати новини і аніме.</p>
-    </div>)
+    return <div className={register_style.register}>
+        <div className="mb-3">
+            <label htmlFor="exampleInputEmail1" className="form-label">Login</label>
+            <input className="form-control" ref={login} placeholder="username" />
+            <div className="form-text">Need unique username.</div>
+        </div>
+        <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+            <input type="password" className="form-control" ref={password} id="exampleInputPassword1" />
+            <div className="form-text">The password may be empty.</div>
+        </div>
+        <form className="was-validated">
+            <div className="custom-control custom-checkbox mb-3">
+                <input ref={admin} type="checkbox" className="custom-control-input" id="customControlValidation1" required />
+                <label className="custom-control-label" htmlFor="customControlValidation1"><span className={register_style.checkboxAdmin}>Admin role</span></label>
+                <div className="invalid-feedback">Without confirmation, you will not be able to add news and new anime. Just write comments.</div>
+            </div>
+        </form>
+        <button type="submit" onClick={createUser} className="btn btn-primary">Submit</button>
+    </div>
 })
 
 export default Register;

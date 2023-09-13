@@ -1,10 +1,9 @@
 import React from "react"
-import commentPage_style from "./CommentPage.scss"
 
 const CommentPage = React.memo((props) => {
-    return <span className={props.className + " " + commentPage_style.commentPage} onClick={props.showAnimeIdActiveCommentsPage}>
-        {props.id}
-    </span>
+    return <button className={`page-item ${props.className}`} onClick={props.showAnimeIdActiveCommentsPage}>
+        <a className="page-link">{props.id}</a>
+    </button>
 })
 
 export default CommentPage;

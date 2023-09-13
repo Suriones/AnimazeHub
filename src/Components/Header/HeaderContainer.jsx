@@ -5,32 +5,30 @@ import Header from "./Header";
 
 const HeaderContainer = React.memo((props) => {
 
-    let authBlockHeader = <div></div>;
+    let authBlockHeader;
 
     const navigate = useNavigate();
 
     const exit = () => {
-        props.dispatch({type: "exitUser"});
+        props.dispatch({ type: "exitUser" });
         navigate("/");
     }
 
     if (props.authData.authStatus === true) {
         authBlockHeader =
-            <div className={header_style.header}>
-                <div className={header_style.username}>
-                    Ім`я: {props.authData.login}
-                    <div className={header_style.exit} onClick={exit}>Вийти</div>
+            <nav className="navbar-light">
+                <div className="container-fluid">
+                    <div className="text-end">
+                        Username: <span className={header_style.login}>{props.authData.login}</span>
+                        <img onClick={exit} width="15" height="15" className={header_style.imgExit} src="https://cdn.icon-icons.com/icons2/933/PNG/512/exit-to-app-button_icon-icons.com_72765.png"></img>
+                    </div>
                 </div>
-            </div>
+            </nav>
     } else {
         authBlockHeader =
-            <div className={header_style.header}>
-                <div className={header_style.header_button}>
-                    <NavLink to="/login" className={(navData) => navData.isActive ? header_style.active : header_style.no_active} end>Увійти</NavLink>
-                </div>
-                <div className={header_style.header_button}>
-                    <NavLink to="/register" className={(navData) => navData.isActive ? header_style.active : header_style.no_active} end>Реєстрація</NavLink>
-                </div>
+            <div className="text-end">
+                <NavLink className="btn btn-outline-primary me-2" to="/login">Login</NavLink>
+                <NavLink className="btn btn-primary" to="/register">Sign-up</NavLink>
             </div>
     }
 
