@@ -89,7 +89,7 @@ export const commentsDAL = {
         }
     },
     addCommentToAnimePage(text, animeID) {
-        if (text === "") {text = "Empty"};
+        if (text === "") {text = "test"};
         return async (dispatch) => {
             await commentsAPI.addCommentToAnimePage(text, animeID);
             const response = await commentsAPI.showAnimeIdLastCommentsPage(animeID);

@@ -1,33 +1,14 @@
 .block {
-
-    display: inline-block;
-    width: 150px;
-    height: 260px;
-    padding: 10px;
-
-    p {
-        color: white;
-        display: inline-block;
-        margin-top: 240px;
-        margin-left: 10px;
-        font-weight: 900;
-        text-shadow: 2px 2px 2px black;
-    }
+    height: fit-content;
+    margin: 10px;
 
     img {
-        position: absolute;
-        width: 150px;
-        height: 230px;
+        margin-top: 10px;
     }
 
-}
-
-.block:hover {
-    p {
-        color: gold;
-    }
-
-    img {
-        border: solid gold 1px;
+    .description{
+        max-height: 100px;
+        overflow: hidden;
+        margin-bottom: 10px;
     }
 }

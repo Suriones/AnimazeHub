@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import NewsBlock from "./NewsBlock/NewsBlock.jsx"
 import Loading from "../Loading/Loading.jsx";
 import News from "./News.jsx";
-import news_style from "./News.scss";
+import newsBlock_style from "./NewsBlock/NewsBlock.scss";
 
 const NewsContainer = React.memo((props) => {
 
@@ -21,7 +21,20 @@ const NewsContainer = React.memo((props) => {
     let addNews;
 
     if (props.authData.authStatus === true && props.authData.admin === true) {
-        addNews = <div className={news_style.addBlock}><p>Додати новину</p><textarea value={inputText} onChange={() => setInputText(addNewsTextArea.current.value)} ref={addNewsTextArea} className={news_style.addNewsText} /><button onClick={sendToDAL}>Додати</button></div>;
+        addNews = <div className={newsBlock_style.block}>
+            <div className="card">
+                <div className={`${newsBlock_style.bodyBlock} ${newsBlock_style.addNews}`}>
+                    <h5 className="card-title"><div className={newsBlock_style.postNews}>Post news</div></h5>
+                    <div className="form-group">
+                        <textarea ref={addNewsTextArea} value={inputText} onChange={() => setInputText(addNewsTextArea.current.value)} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <p><button type="button" onClick={sendToDAL} className="btn btn-success">Send</button></p>
+                </div>
+                <div className="card-footer">
+                    <small className="text-muted">Author: admin</small>
+                </div>
+            </div>
+        </div>
     }
 
     if (!props.news.length) {

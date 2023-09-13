@@ -15,7 +15,8 @@ const news_reducer = (state = initialState, action) => {
 
         stateCopy.news = state.news.map(item => ({
             id: item.id,
-            name: item.name
+            name: item.name,
+            value: item.value
         }));
 
         return stateCopy;

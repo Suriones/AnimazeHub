@@ -1,67 +1,34 @@
 body {
     margin: 0;
-    background-color: #0768b5;
+    padding: 0;
+    background-color: #F2EAED;
+
+    .imgExit {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .login {
+        color: green;
+        margin: 0;
+    }
 
     .header {
-        height: 80px;
-        background-color: #005090;
-        display: flex;
-        position: relative;
-
-        .header_button {
-            padding-top: 30px;
-            display: flex;
-            flex-shrink: 0;
-            min-width: 100px;
-
-            .active {
-                color: gold;
-            }
-
-            .no_active {
-                color: white;
-            }
-
-            a {
-                text-decoration: none;
-
-            }
-        }
-
-        .header_button:first-child {
-            margin-left: 30px;
-        }
-
-        .vertical_line {
-            background-color: white;
-            width: 1px;
-            margin: 0 30px 0 30px;
-            flex-shrink: 0;
-        }
-
-        .username {
-            color: white;
-            margin: 0 20px 0 20px;
-            padding-top: 30px;
-            flex-shrink: 0;
-        }
-
-        .exit {
-            color: red;
-            cursor: pointer;
-        }
+        background-color: #edf2ea;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
     }
 }
 
 body::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
     height: 3px;
 }
 
 body::-webkit-scrollbar-track {
-    background: #005090;
+    background: #F2EAED;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: #A9A9A9;
+    border-radius: 25px;
 }

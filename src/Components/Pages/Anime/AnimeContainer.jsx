@@ -3,7 +3,7 @@ import AnimeBlock from "./AnimeBlock/AnimeBlock";
 import Loading from "../Loading/Loading.jsx"
 import Anime from "./Anime.jsx";
 import { NavLink } from "react-router-dom";
-import anime_style from "./Anime.scss";
+import animeBlock_style from "./AnimeBlock/AnimeBlock.scss";
 
 const AnimeContainer = (props) => {
 
@@ -11,16 +11,18 @@ const AnimeContainer = (props) => {
     let addAnimeBlock;
 
     if (props.authData.authStatus === true && props.authData.admin === true) {
-        addAnimeBlock = <NavLink to={"/addAnime"}>
-            <div className={anime_style.block}>
-                <img src="https://e0.pxfuel.com/wallpapers/380/263/desktop-wallpaper-one-piece-wanted-poster-print-by-wallart-displate-in-2020-one-piece-anime-one-piece-drawing-one-piece-bounties.jpg" />
-                <p>Додати аніме</p>
+        addAnimeBlock = <div className={`card ${animeBlock_style.block}`} style={{ width: 18 + "rem" }}>
+            <img className="card-img-top" src="https://beebom.com/wp-content/uploads/2023/03/best-anime-with-overpowered-main-character-OP-MC.jpg?w=750&quality=75" alt="Card image cap" />
+            <div className="card-body">
+                <h5 className="card-title">Add new Anime</h5>
+                <p className={`card-text ${animeBlock_style.description}`}>{props.description}</p>
+                <NavLink to={`/addAnime`} className="btn btn-primary">Go!</NavLink>
             </div>
-        </NavLink>
+        </div>
     }
 
     props.anime.map(a => {
-        animeComponents.push(<AnimeBlock id={a.id} key={a.id} name={a.name} img={a.img} />);
+        animeComponents.push(<AnimeBlock id={a.id} key={a.id} name={a.name} img={a.img} description={a.description} />);
     })
 
     if (!props.anime.length) {

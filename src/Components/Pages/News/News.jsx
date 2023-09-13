@@ -1,7 +1,7 @@
 import React from "react";
 
 const News = (props) => {
-    return <div>
+    return <div className="card-group">
         {props.addNews}
         {props.newsComponents}
     </div>

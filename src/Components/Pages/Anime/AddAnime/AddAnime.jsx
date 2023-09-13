@@ -26,7 +26,7 @@ const AddAnime = React.memo((props) => {
             }
 
             if (!TrailerYouTubeUrl.current.value.includes("https://www.youtube")) {
-                TrailerYouTubeUrl.current.value = "https://www.youtube.com/";
+                TrailerYouTubeUrl.current.value = "https://www.youtube-nocookie.com/embed/N_yu136hKMQ?si=MuL4-6EVIqKHc5mm";
             }
 
             const anime = {
@@ -44,13 +44,28 @@ const AddAnime = React.memo((props) => {
 
     }
 
-    return (<div className={addAnime_style.addAnime}>
-        <p><input ref={Title} placeholder="Title"></input></p>
-        <p><input ref={IMGUrl} placeholder="IMG url"></input><img title="Скопіюйте посилання на картинку з гугла, бажаний масштаб 1:2" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/52582/information-emoji-clipart-md.png"></img></p>
-        <p><input ref={Description} placeholder="Description"></input></p>
-        <p><input ref={TrailerYouTubeUrl} placeholder="Trailer YouTube url"></input><img title="Посилання має починатись з https://www.youtube... Перейдіть в (поділитись відео) на YouTube, далі (встроїти) і скопіюйте посилання звідтам. В ідеалі додайте після слова youtube (-nocookie), щоб уникнути можливих помилок." src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/52582/information-emoji-clipart-md.png"></img></p>
-        <p><button onClick={sendToDB}>Додати аніме</button></p>
-    </div>)
+    return <div className={addAnime_style.form}>
+        <div className="mb-3">
+            <label htmlFor="exampleInputEmail1" className="form-label">Title</label>
+            <input ref={Title} className="form-control" />
+            <div className="form-text">Anime name.</div>
+        </div>
+        <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">Image URL</label>
+            <input ref={IMGUrl} className="form-control" />
+            <div className="form-text">Copy the link to the picture from Google. The desired scale is 2:1.</div>
+        </div>
+        <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">Description</label>
+            <input ref={Description} className="form-control" />
+        </div>
+        <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">YouTube Trailer URL</label>
+            <input ref={TrailerYouTubeUrl} className="form-control" />
+            <div className="form-text">The link must start with https://www.youtube <p>Go to (share video) on YouTube, then (embed) and copy the link from there.</p> Ideally add after (youtube-nocookie) to avoid possible errors. </div>
+        </div>
+        <button onClick={sendToDB} type="submit" className="btn btn-primary">Submit</button>
+    </div>
 })
 
 export default AddAnime;
