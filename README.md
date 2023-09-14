@@ -31,7 +31,7 @@ Local state is used in form fields, button status and content display, but all g
 All my components use only information from props, without importing any external files. Only container components have dispatch and DAL functions, which are also transmitted through props.</p>
 <p>Many components are wrapped in React.memo for optimization, and almost all pages include React.lazy functions. While all components are loading, a loading circle will pop up. All components are functional, hooks used: useEffect, useState (just try it out), useParams, useRef.</p>  
 
-<p><img width="1000" alt="Screenshot_5" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/fdf5f1d8-7fc2-46fb-b661-2f114f243ca8"></p>
+<p><img width="700" alt="Screenshot_12" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/d84fe56c-fa86-40b6-b4c7-be2872db86c3"></p>
 <p><img width="25" alt="Screenshot_5" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/9630dea3-fe59-4ff3-8363-c0f88af4f291">
 The comments component has a large amount of logic and is placed separately, so it can be used separately from the anime page. She just needs to pass the corresponding object through props. Comments on its use are left <a href="https://github.com/Suriones/ReactApp_2023/blob/main/src/Components/CommentsBlock/CommentsBlockContainer.jsx">here.</a></p>
 <p>The <a href="https://github.com/Suriones/ReactApp_2023/blob/main/src/Components/CommentsBlock/CommentsBlockContainer.jsx">container component</a> is responsible for the logic, the <a href="https://github.com/Suriones/ReactApp_2023/blob/main/src/Components/CommentsBlock/CommentsBlock.jsx">“dumb”</a> component is responsible for rendering.</p>
@@ -40,7 +40,8 @@ The comments component has a large amount of logic and is placed separately, so 
 
 <p><img width="25" alt="Screenshot_12" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/7d307563-3772-442c-bbf1-d0b992c57991">
 Covered all reducers with <a href="https://github.com/Suriones/ReactApp_2023/blob/main/src/Tests/Reducers/reducers.test.js">tests</a> while working.</p>
-<p><img width="700" alt="Screenshot_12" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/d84fe56c-fa86-40b6-b4c7-be2872db86c3"></p>
+<p><img width="1000" alt="Screenshot_5" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/fdf5f1d8-7fc2-46fb-b661-2f114f243ca8"></p>
+
 <p><img width="25" alt="Screenshot_12" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/8c2351ee-2f8b-4982-9f4d-c8f2f2ee1e50">
 All styles used the SASS preprocessor.</p>
 
