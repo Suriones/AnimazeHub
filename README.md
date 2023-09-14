@@ -1,4 +1,4 @@
-<h1 align="center">Hi there, I'm <a target="_blank">Dmitry</a> 
+<h1 align="center">Hi there, I'm <a target="_blank">Dmytro</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Junior Frontend React developer from Ukraine</h3>
 
