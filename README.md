@@ -1,6 +1,6 @@
 <h1 align="center">Hi there, I'm <a target="_blank">Dmytro</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Junior Frontend React developer from Ukraine</h3>
+<h3 align="center">Frontend React developer from Ukraine</h3>
 
 <p align="center">My project is a ready-made platform for watching and discussing anime. Users can register, leave comments, and administrators can add news and new series. The database is a JSON file.</p>
 
