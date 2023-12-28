@@ -1,0 +1,91 @@
+.commentsComponent {
+    width: 100%;
+    display: flex;
+
+    .commentsBlock {
+        width: 600px;
+        margin-left: 10px;
+
+        .addCommentsBlock {
+            display: flex;
+
+            textarea {
+                width: 430px;
+                height: 80px;
+                margin: 10px;
+                background-color: white;
+                box-shadow: 3px 3px 10px rgba(0, 0, 0, .25);
+                resize: none;
+                padding: 10px;
+                border: 1px rgb(168, 168, 168) solid;
+            }
+
+            textarea:disabled {
+                background-color: #E6E6E6;
+            }
+
+            textarea:focus {
+                outline: none;
+                border: 1px gray solid;
+            }
+
+            textarea::-webkit-scrollbar {
+                width: 3px;
+            }
+            
+            textarea::-webkit-scrollbar-thumb {
+                background-color: #c1c1c1;
+            }
+
+            button {
+                border-radius: 5px;
+                border: 1px #d2d2d2 solid;
+                width: 70px;
+                height: 35px;
+                background-color: #008CBA;
+                color: white;
+                margin-top: 10px;
+            }
+
+            button:disabled {
+                cursor: default;
+                opacity: 0.8;
+            }
+        }
+
+        .visibleComments {
+            word-wrap: break-word;
+        }
+
+        .commentsPages {
+            display: flex;
+            margin: 10px 0 10px 10px;
+
+            .active {
+                background-color: #64b7d3;
+                a {
+                    color: black;
+                    font-weight: 700;
+                }
+            }
+
+            button {
+                border: 1px #E6E6E6 solid;
+                width: 80px;
+                height: 32px;
+                background-color: white;
+            }
+
+            #listPagesBack:disabled,
+            #listPagesForward:disabled {
+                background-color: rgb(235, 232, 232);
+
+                a {
+                    color: rgb(134, 134, 134);
+                    cursor: default;
+                }
+            }
+
+        }
+    }
+}

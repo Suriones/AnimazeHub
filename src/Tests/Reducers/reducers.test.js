@@ -84,21 +84,21 @@ it("auth setActiveUser", () => {
 it("news refreshNewsDB", () => {
     let state = {
         news: [],
-        checkerUpdate: false
+        refresh: false
     }
 
     state = news_reducer(state, { type: "refreshNewsDB" });
-    expect(state).toEqual({ news: [], checkerUpdate: true });
+    expect(state).toEqual({ news: [], refresh: true });
 })
 
 it("news setNewsState", () => {
     let state = {
         news: [],
-        checkerUpdate: false
+        refresh: false
     }
 
     state = news_reducer(state, { type: "setNewsState", newState: [{ id: 0, name: "test", value: "test" }] });
-    expect(state).toEqual({ news: [{ id: 0, name: "test", value: "test" }], checkerUpdate: false });
+    expect(state).toEqual({ news: [{ id: 0, name: "test", value: "test" }], refresh: false });
 })
 
 it("comments setCommentsState", () => {

@@ -1,40 +1,35 @@
 import React, { useEffect } from "react";
-import login_style from "./Login.scss"
+import login_s from "./Login.module.scss"
 import { useNavigate } from "react-router-dom";
 
-const Login = React.memo((props) => {
-
-    const login = React.createRef();
-    const password = React.createRef();
-
-    const loginUser = () => {
-
-        const user = {
-            login: login.current.value,
-            password: password.current.value
-        }
-
-        props.dispatch(props.authDAL.loginUser(user));
-    }
+const Login = (props) => {
 
     const navigate = useNavigate();
-    useEffect(() => {
-        if (props.authData.authStatus === true) { navigate("/"); }
-    })
+    useEffect(() => { props.data.authData.authStatus ? navigate("/") : null });
 
-    return <div className={login_style.login}>
-        <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Login</label>
-            <input className="form-control" ref={login} placeholder="username" />
-            <div className="form-text">You can use the user or admin username without a password.</div>
+    const login = React.createRef(),
+        password = React.createRef();
+
+    const authentication = () => props.data.dispatch(props.data.authDAL.loginUser({
+        login: login.current.value,
+        password: password.current.value
+    })).then(response => {
+        response ? null : alert("Incorrect data!");
+    });
+
+    return <div className={login_s.loginForm}>
+        <div className={login_s.loginInput}>
+            <label>Login</label><br />
+            <input maxLength="15" ref={login} placeholder="username" />
+            <a>You can use the <b>'user'</b> or <b>'admin'</b> username without a password.</a>
         </div>
-        <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input type="password" className="form-control" ref={password} id="exampleInputPassword1" />
-            <div className="form-text">The password may be empty.</div>
+        <div className={login_s.passwordInput}>
+            <label>Password</label>
+            <input type="password" ref={password} />
+            <a>The password may be empty.</a>
         </div>
-        <button type="submit" onClick={loginUser} className="btn btn-primary">Submit</button>
+        <button onClick={authentication}>Submit</button>
     </div>
-})
+}
 
 export default Login;

@@ -1,55 +1,51 @@
 import React, { useEffect } from "react";
-import register_style from "./Register.scss"
+import register_s from "./Register.module.scss"
 import { useNavigate } from "react-router-dom";
 
-const Register = React.memo((props) => {
+const Register = (props) => {
 
-    const login = React.createRef();
-    const password = React.createRef();
-    const admin = React.createRef();
+    const navigate = useNavigate();
+    useEffect(() => { props.data.authData.authStatus ? navigate("/") : null });
+
+    const login = React.createRef(),
+        password = React.createRef(),
+        admin = React.createRef();
 
     const createUser = () => {
-
-        const user = {
-            login: login.current.value,
-            password: password.current.value,
-            admin: admin.current.checked
-        }
-
-        props.dispatch(props.authDAL.checkLogin(user.login)).then(response => {
-            if (response === false) {
-                alert("Username вже зайнятий!")
-            } else {
-                props.dispatch(props.authDAL.addUser(user));
-            }
+        props.data.dispatch(props.data.authDAL.checkingLoginUniqueness(login.current.value)).then(response => {
+            response ? props.data.dispatch(props.data.authDAL.registerUser({
+                login: login.current.value,
+                password: password.current.value,
+                admin: admin.current.checked,
+                likedAnime: ""
+            })) : alert("Username is already taken!");
         });
     }
 
-    const navigate = useNavigate();
-    useEffect(() => {
-        if (props.authData.authStatus === true) { navigate("/"); }
-    })
+    return <div className={register_s.registerForm}>
 
-    return <div className={register_style.register}>
-        <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Login</label>
-            <input className="form-control" ref={login} placeholder="username" />
-            <div className="form-text">Need unique username.</div>
+        <div className={register_s.loginInput}>
+            <label>Login</label><br />
+            <input maxLength="15" ref={login} placeholder="username" />
+            <a>Need unique username.</a>
         </div>
-        <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input type="password" className="form-control" ref={password} id="exampleInputPassword1" />
-            <div className="form-text">The password may be empty.</div>
+
+        <div className={register_s.passwordInput}>
+            <label>Password</label><br />
+            <input type="password" ref={password} />
+            <a>Password may be empty.</a>
         </div>
-        <form className="was-validated">
-            <div className="custom-control custom-checkbox mb-3">
-                <input ref={admin} type="checkbox" className="custom-control-input" id="customControlValidation1" required />
-                <label className="custom-control-label" htmlFor="customControlValidation1"><span className={register_style.checkboxAdmin}>Admin role</span></label>
-                <div className="invalid-feedback">Without confirmation, you will not be able to add news and new anime. Just write comments.</div>
-            </div>
-        </form>
-        <button type="submit" onClick={createUser} className="btn btn-primary">Submit</button>
+
+        <div className={register_s.checkbox}>
+            <input ref={admin} type="checkbox" id="unchecked" className={register_s.checkboxInput} />
+            <label htmlFor="unchecked" className={register_s.checkboxLabel}></label>
+            <a>Admin role</a>
+        </div>
+
+        <div className={register_s.warning}>Without confirmation, you will not be able to add news and new anime. Only write a comments.</div>
+
+        <button onClick={createUser}>Submit</button>
     </div>
-})
+}
 
 export default Register;

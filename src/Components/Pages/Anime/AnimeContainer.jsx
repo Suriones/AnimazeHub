@@ -1,35 +1,41 @@
-import React from "react";
-import AnimeBlock from "./AnimeBlock/AnimeBlock";
-import Loading from "../Loading/Loading.jsx"
+import React, { useEffect } from "react";
+import AnimeCard from "./AnimeCard/AnimeCard.jsx";
+import Loading from "./../../ReusableComponents/StateStatus/Loading/Loading.jsx"
 import Anime from "./Anime.jsx";
-import { NavLink } from "react-router-dom";
-import animeBlock_style from "./AnimeBlock/AnimeBlock.scss";
 
-const AnimeContainer = (props) => {
+const AnimeContainer = React.memo((props) => {
 
-    let animeComponents = [];
-    let addAnimeBlock;
+    useEffect(() => { props.data.dispatch({ type: "setValueSearchField", value: "" }) }, []);
 
-    if (props.authData.authStatus === true && props.authData.admin === true) {
-        addAnimeBlock = <div className={`card ${animeBlock_style.block}`} style={{ width: 18 + "rem" }}>
-            <img className="card-img-top" src="https://beebom.com/wp-content/uploads/2023/03/best-anime-with-overpowered-main-character-OP-MC.jpg?w=750&quality=75" alt="Card image cap" />
-            <div className="card-body">
-                <h5 className="card-title">Add new Anime</h5>
-                <p className={`card-text ${animeBlock_style.description}`}>{props.description}</p>
-                <NavLink to={`/addAnime`} className="btn btn-primary">Go!</NavLink>
-            </div>
-        </div>
+    const mappingAnimeCard = () => {
+        const sort = (option) => {
+            switch (option.target.value) {
+                case "By name":
+                    props.data.dispatch({ type: "sort", sort: "name" });
+                    break;
+                case "By likes":
+                    props.data.dispatch({ type: "sort", sort: "like" });
+                    break;
+                case "By year of release":
+                    props.data.dispatch({ type: "sort", sort: "year" });
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        const search = React.createRef();
+        const setValueSearchField = () => props.data.dispatch({ type: "setValueSearchField", value: search.current.value });
+
+        const like = (animeID, likeStatus, likeID) => likeStatus === "/unlike.png" ? props.data.dispatch(props.data.authDAL.likeAnime(props.data.authData.userID, animeID)) : props.data.dispatch(props.data.authDAL.unlikeAnime(props.data.authData.userID, likeID, animeID));
+
+        const animeList = [];
+        props.data.animeData.filteredAnime.map(a => animeList.push(<AnimeCard authStatus={props.data.authData.authStatus} likedAnime={props.data.authData.likedAnime} animeID={a.animeID} key={a.animeID} name={a.name} img={a.img} description={a.description} year={a.year} likeCount={a.like} like={like} />));
+
+        return <Anime anime={props.data.animeData.anime} search={search} searchValue={props.data.animeData.valueSearchField} setSearchValue={setValueSearchField} sort={sort} animeList={animeList.reverse()} admin={props.data.authData.admin} />
     }
 
-    props.anime.map(a => {
-        animeComponents.push(<AnimeBlock id={a.id} key={a.id} name={a.name} img={a.img} description={a.description} />);
-    })
-
-    if (!props.anime.length) {
-        return <Loading />
-    } else {
-        return <Anime animeComponents={animeComponents} addAnimeBlock={addAnimeBlock} />;
-    }
-}
+    return props.data.animeData.animeRequestStatus ? mappingAnimeCard() : <Loading />;
+})
 
 export default AnimeContainer;

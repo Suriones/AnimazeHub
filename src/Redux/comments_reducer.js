@@ -1,11 +1,11 @@
-import { commentsAPI } from "./API/api.js";
+import { commentsAPI } from "./../API/api.js";
 
 const initialState = {
     comments: [],
-    checkerUpdate: false,
-    commentsLength: 0,
+    refresh: false,
+    valueOfTheCommentAddingField: "",
     activePage: 1,
-    actualCommentsPagesGroup: 10
+    commentsRequestStatus: false
 };
 
 const comments_reducer = (state = initialState, action) => {
@@ -13,95 +13,71 @@ const comments_reducer = (state = initialState, action) => {
     const _createStateCopyComments = () => {
         let stateCopy = {
             comments: [],
-            checkerUpdate: state.checkerUpdate,
-            commentsLength: state.commentsLength,
+            refresh: state.refresh,
+            valueOfTheCommentAddingField: state.valueOfTheCommentAddingField,
             activePage: state.activePage,
-            actualCommentsPagesGroup: state.actualCommentsPagesGroup
+            commentsRequestStatus: state.commentsRequestStatus
         }
 
         stateCopy.comments = state.comments.map(item => ({
-            id: item.id,
             text: item.text,
-            animeId: item.animeId
+            username: item.username,
+            time: item.time
         }));
 
         return stateCopy;
     }
 
-    let stateCopy;
+    const stateCopy = _createStateCopyComments();
 
     switch (action.type) {
 
         case "setCommentsState":
-            stateCopy = _createStateCopyComments();
             stateCopy.comments = [];
 
-            for (let i = 0; i < action.newState.length; i++) {
-                stateCopy.comments[i] = action.newState[i];
-            }
+            action.newState.map(item => stateCopy.comments.push(item));
+            stateCopy.activePage = stateCopy.comments.length ? Math.ceil(stateCopy.comments.length / 5) : 1;
+
+            stateCopy.commentsRequestStatus = true;
 
             return stateCopy;
 
         case "refreshCommentsDB":
-            stateCopy = _createStateCopyComments();
-            stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
+            stateCopy.refresh = !stateCopy.refresh;
             return stateCopy;
 
-        case "setAnimeIDCommentsLength":
-            stateCopy = _createStateCopyComments();
-            stateCopy.commentsLength = action.commentsLength;
+        case "setValueOfTheCommentAddingField":
+            stateCopy.valueOfTheCommentAddingField = action.value;
             return stateCopy;
 
-        case "setCommentsActivePage":
-            stateCopy = _createStateCopyComments();
+        case "setActivePage":
             stateCopy.activePage = action.activePage;
             return stateCopy;
 
-        case "setActualCommentsPagesGroup":
-            stateCopy = _createStateCopyComments();
-            stateCopy.actualCommentsPagesGroup = action.actualCommentsPagesGroup;
-            return stateCopy;
-
         default:
-            return state;
+            return stateCopy;
     }
 }
 
 export const commentsDAL = {
-    getAnimeIdCountComments(animeID) {
+    postComment(text, key, type, username, time) {
         return async (dispatch) => {
-            const count = await commentsAPI.getAnimeIdCountComments(animeID);
-            dispatch({ type: "setAnimeIDCommentsLength", commentsLength: count });
-        }
-    },
-    showAnimeIdFirstCommentsPage(animeID) {
-        return async (dispatch) => {
-            const data = await commentsAPI.showAnimeIdFirstCommentsPage(animeID);
-            dispatch({ type: "setCommentsState", newState: data });
-            dispatch({ type: "setCommentsActivePage", activePage: 1 });
-        }
-    },
-    showAnimeIdActiveCommentsPage(selectedPage, animeID) {
-        return async (dispatch) => {
-            const data = await commentsAPI.showAnimeIdActiveCommentsPage(selectedPage, animeID);
-            dispatch({ type: "setCommentsState", newState: data });
-            dispatch({ type: "setCommentsActivePage", activePage: selectedPage });
-        }
-    },
-    addCommentToAnimePage(text, animeID) {
-        if (text === "") {text = "test"};
-        return async (dispatch) => {
-            await commentsAPI.addCommentToAnimePage(text, animeID);
-            const response = await commentsAPI.showAnimeIdLastCommentsPage(animeID);
-            dispatch({ type: "setCommentsActivePage", activePage: response.activePage });
-            dispatch({ type: "setCommentsState", newState: response.data });
+
+            await commentsAPI.postComment(text, key, type, username, time);
+
             dispatch({ type: "refreshCommentsDB" });
+            dispatch({ type: "setValueOfTheCommentAddingField", value: "" });
+        }
+    },
+    getAll(type, key) {
+        return async (dispatch) => {
 
-            function actualCommentsPagesGroupFromActivePage(activePage) {
-                return Math.floor((activePage - 0.01) / 10) * 10 + 10;
-            }
+            const data = await commentsAPI.getAll(type, key);
+            const newData = [];
 
-            dispatch({type: "setActualCommentsPagesGroup", actualCommentsPagesGroup: actualCommentsPagesGroupFromActivePage(response.activePage)})
+            for (let key in data) newData.push(data[key]);
+
+            dispatch({ type: "setCommentsState", newState: newData });
         }
     }
 }

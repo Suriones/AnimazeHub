@@ -1,0 +1,33 @@
+.pageNotFoundComponent {
+    display: flex;
+    justify-content: center;
+    font-family: BreeCYR-Light;
+
+    .pageNotFoundBlock {
+        margin-top: 100px;
+
+        h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        p {
+            font-family: BreeCYR-Light;
+
+            .oops {
+                color: red;
+                font-size: 20px;
+                font-family: BreeCYR-Light;
+            }
+        }
+
+        button {
+            border-radius: 5px;
+            border: 1px #d2d2d2 solid;
+            width: 90px;
+            height: 35px;
+            background-color: #008CBA;
+            color: white;
+        }
+    }
+}

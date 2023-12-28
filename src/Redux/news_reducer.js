@@ -1,59 +1,81 @@
-import { newsAPI } from "./API/api";
+import { newsAPI } from "./../API/api";
 
 const initialState = {
     news: [],
-    checkerUpdate: false
+    refresh: false,
+    titleOfTheNewsAddingField: "",
+    valueOfTheNewsAddingField: "",
+    newsRequestStatus: false
 };
 
 const news_reducer = (state = initialState, action) => {
 
     const _createStateCopyNews = () => {
-        let stateCopy = {
+        const stateCopy = {
             news: [],
-            checkerUpdate: state.checkerUpdate
+            refresh: state.refresh,
+            titleOfTheNewsAddingField: state.titleOfTheNewsAddingField,
+            valueOfTheNewsAddingField: state.valueOfTheNewsAddingField,
+            newsRequestStatus: state.newsRequestStatus
         }
 
         stateCopy.news = state.news.map(item => ({
-            id: item.id,
-            name: item.name,
-            value: item.value
+            value: item.value,
+            username: item.username,
+            time: item.time,
+            title: item.title
         }));
 
         return stateCopy;
     }
 
-    let stateCopy;
+    const stateCopy = _createStateCopyNews();
 
     switch (action.type) {
         case "setNewsState":
-            stateCopy = _createStateCopyNews();
+            stateCopy.news = [];
 
-            for (let i = 0; i < action.newState.length; i++) {
-                stateCopy.news[i] = action.newState[i];
-            }
+            action.newState.map(item => stateCopy.news.push(item));
+            stateCopy.newsRequestStatus = true;
 
             return stateCopy;
 
         case "refreshNewsDB":
-            stateCopy = _createStateCopyNews();
-            stateCopy.checkerUpdate = !stateCopy.checkerUpdate;
+            stateCopy.refresh = !stateCopy.refresh;
+            return stateCopy;
+
+        case "setTitleOfTheNewsAddingField":
+            stateCopy.titleOfTheNewsAddingField = action.value;
+            return stateCopy;
+
+        case "setValueOfTheNewsAddingField":
+            stateCopy.valueOfTheNewsAddingField = action.value;
             return stateCopy;
 
         default:
-            return state;
+            return stateCopy;
     }
 }
 
 export const newsDAL = {
     getAll() {
         return async (dispatch) => {
+
             const data = await newsAPI.getAll();
-            dispatch({ type: "setNewsState", newState: data });
+            const newData = [];
+
+            for (let key in data) newData.push(data[key]);
+
+            dispatch({ type: "setNewsState", newState: newData });
         }
     },
-    postNews(id, text, value) {
+    postNews(value, username, time, title) {
         return async (dispatch) => {
-            await newsAPI.postNews(id, text, value)
+
+            await newsAPI.postNews(value, username, time, title);
+
+            dispatch({ type: "setValueOfTheNewsAddingField", value: "" });
+            dispatch({ type: "setTitleOfTheNewsAddingField", value: "" });
             dispatch({ type: "refreshNewsDB" });
         }
     }

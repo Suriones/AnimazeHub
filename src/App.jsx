@@ -1,33 +1,88 @@
-import React, { Suspense, lazy, useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Loading from "./Components/Pages/Loading/Loading.jsx";
+import Loading from "./Components/ReusableComponents/StateStatus/Loading/Loading.jsx";
 import HeaderContainer from "./Components/Header/HeaderContainer.jsx";
-
-const Register = lazy(() => import("./Components/Pages/Auth/Register/Register.jsx"));
-const Login = lazy(() => import("./Components/Pages/Auth/Login/Login.jsx"));
-const NewsContainer = lazy(() => import("./Components/Pages/News/NewsContainer.jsx"));
-const AnimeContainer = lazy(() => import("./Components/Pages/Anime/AnimeContainer.jsx"));
-const AnimeFullPageContainer = lazy(() => import("./Components/Pages/Anime/AnimeBlock/AnimeFullPage/AnimeFullPageContainer.jsx"));
-const AddAnime = lazy(() => import("./Components/Pages/Anime/AddAnime/AddAnime.jsx"));
-const PageNotFound = lazy(() => import("./Components/Pages/PageNotFound/PageNotFound.jsx"));
+import Register from "./Components/Pages/Auth/Register/Register.jsx";
+import Login from "./Components/Pages/Auth/Login/Login.jsx";
+import MainContainer from "./Components/Pages/Main/MainContainer.jsx";
+import AnimeContainer from "./Components/Pages/Anime/AnimeContainer.jsx";
+import VideoContentPageContainer from "./Components/ReusableComponents/VideoContentPage/VideoContentPageContainer.jsx";
+import AnimeAddingPage from "./Components/Pages/Anime/AnimeAddingPage/AnimeAddingPage.jsx";
+import PageNotFound from "./Components/ReusableComponents/StateStatus/PageNotFound/PageNotFound.jsx";
+import ReviewAddingPage from "./Components/Pages/Main/ReviewAddingPage/ReviewAddingPage.jsx"
 
 const App = (props) => {
 
     useEffect(() => {
         props.dispatch(props.animeDAL.getAll());
-    }, [props.state.animeData.checkerUpdate]);
+    }, [props.state.animeData.refresh]);
+
+    useEffect(() => {
+        props.dispatch(props.newsDAL.getAll());
+    }, [props.state.newsData.refresh]);
+
+    useEffect(() => {
+        props.dispatch(props.reviewDAL.getAll());
+    }, [props.state.reviewData.refresh]);
+
+    const data = {
+        main: {
+            dispatch: props.dispatch,
+            newsDAL: props.newsDAL,
+            newsData: props.state.newsData,
+            reviewData: props.state.reviewData,
+            authData: props.state.authData,
+            animeData: props.state.animeData
+        },
+        anime: {
+            dispatch: props.dispatch,
+            animeDAL: props.animeDAL,
+            authDAL: props.authDAL,
+            animeData: props.state.animeData,
+            authData: props.state.authData
+        },
+        animeAddingPage: {
+            dispatch: props.dispatch,
+            animeDAL: props.animeDAL,
+            authData: props.state.authData
+        },
+        reviewAddingPage: {
+            dispatch: props.dispatch,
+            reviewDAL: props.reviewDAL,
+            authData: props.state.authData
+        },
+        animeFullPage: {
+            dispatch: props.dispatch,
+            animeDAL: props.animeDAL,
+            commentsDAL: props.commentsDAL,
+            animeData: props.state.animeData,
+            commentsData: props.state.commentsData,
+            authData: props.state.authData
+        },
+        login: {
+            dispatch: props.dispatch,
+            authDAL: props.authDAL,
+            authData: props.state.authData,
+        },
+        register: {
+            dispatch: props.dispatch,
+            authDAL: props.authDAL,
+            authData: props.state.authData,
+        }
+    }
 
     return (
         <div>
             <HeaderContainer authData={props.state.authData} dispatch={props.dispatch} />
             <Suspense fallback={<Loading />}>
                 <Routes>
-                    <Route path="/login" element={<Login authData={props.state.authData} dispatch={props.dispatch} authDAL={props.authDAL} />} />
-                    <Route path="/register" element={<Register authData={props.state.authData} dispatch={props.dispatch} authDAL={props.authDAL} />} />
-                    <Route path="/" element={<NewsContainer checkerUpdate={props.state.newsData.checkerUpdate} news={props.state.newsData.news} dispatch={props.dispatch} newsDAL={props.newsDAL} authData={props.state.authData} />} />
-                    <Route path="/anime" element={<AnimeContainer anime={props.state.animeData.anime} authData={props.state.authData}/>} />
-                    <Route path="/anime/:animeId" element={<AnimeFullPageContainer animeData={props.state.animeData} commentsData={props.state.commentsData} authData={props.state.authData} dispatch={props.dispatch} animeDAL={props.animeDAL} commentsDAL={props.commentsDAL} />} />
-                    <Route path="/addAnime" element={<AddAnime dispatch={props.dispatch} animeDAL={props.animeDAL} authData={props.state.authData} />} />
+                    <Route path="/login" element={<Login data={data.login} />} />
+                    <Route path="/register" element={<Register data={data.register} />} />
+                    <Route path="/" element={<MainContainer data={data.main} />} />
+                    <Route path="/anime" element={<AnimeContainer data={data.anime} />} />
+                    <Route path="/anime/:animeId" element={<VideoContentPageContainer data={data.animeFullPage} />} />
+                    <Route path="/addAnime" element={<AnimeAddingPage data={data.animeAddingPage} />} />
+                    <Route path="/addReview" element={<ReviewAddingPage data={data.reviewAddingPage} />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </Suspense>

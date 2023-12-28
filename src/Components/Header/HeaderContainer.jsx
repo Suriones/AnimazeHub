@@ -1,38 +1,38 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import header_style from "./Header.scss"
-import Header from "./Header";
+import header_s from "./Header.module.scss"
+import Header from "./Header.jsx";
 
 const HeaderContainer = React.memo((props) => {
 
-    let authBlockHeader;
-
     const navigate = useNavigate();
 
-    const exit = () => {
-        props.dispatch({ type: "exitUser" });
-        navigate("/");
-    }
-
-    if (props.authData.authStatus === true) {
-        authBlockHeader =
-            <nav className="navbar-light">
-                <div className="container-fluid">
-                    <div className="text-end">
-                        Username: <span className={header_style.login}>{props.authData.login}</span>
-                        <img onClick={exit} width="15" height="15" className={header_style.imgExit} src="https://cdn.icon-icons.com/icons2/933/PNG/512/exit-to-app-button_icon-icons.com_72765.png"></img>
-                    </div>
+    const authorizationOn =
+        <nav className={header_s.authorizationOn}>
+            <div className={header_s.login}>
+                <div className={header_s.username}>
+                    Login: {props.authData.login}
                 </div>
-            </nav>
-    } else {
-        authBlockHeader =
-            <div className="text-end">
-                <NavLink className="btn btn-outline-primary me-2" to="/login">Login</NavLink>
-                <NavLink className="btn btn-primary" to="/register">Sign-up</NavLink>
+                <div className={header_s.exitButton}>
+                    <img onClick={() => { props.dispatch({ type: "exitUser" }); navigate("/") }} src="user_exit.png"></img>
+                </div>
             </div>
-    }
+        </nav>
 
-    return (<Header authBlockHeader={authBlockHeader} />);
+    const authorizationOff =
+        <nav className={header_s.authorizationOff}>
+            <NavLink className={header_s.authButton} style={({ isActive }) => ({
+                animation: isActive ? "none" : null,
+                color: isActive ? "#FFB6C1" : null,
+                textDecoration: isActive ? "solid underline #FFB6C1 2px" : null
+            })} to="/login">Login</NavLink>
+            <NavLink className={header_s.authButton} style={({ isActive }) => ({
+                color: isActive ? "#FFB6C1" : null,
+                textDecoration: isActive ? "solid underline #FFB6C1 2px" : null
+            })} to="/register">Sign-up</NavLink>
+        </nav>;
+
+    return <Header authorization={props.authData.authStatus ? authorizationOn : authorizationOff} />
 })
 
 export default HeaderContainer;

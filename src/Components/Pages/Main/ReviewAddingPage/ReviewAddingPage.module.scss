@@ -1,0 +1,44 @@
+.form {
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input {
+        border-radius: 7px;
+        border: 1px #d2d2d2 solid;
+        width: 290px;
+        height: 40px;
+        padding: 0 10px 0 10px;
+        margin-top: 5px;
+    }
+
+    input:focus {
+        outline: none;
+        border: 1px gray solid;
+    }
+
+    div {
+        margin-bottom: 10px;
+
+        .description {
+            color: #696969;
+            font-family: BreeCYR-Light;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    }
+
+    button {
+        border-radius: 5px;
+        border: 1px #d2d2d2 solid;
+        width: 70px;
+        height: 35px;
+        background-color: #008CBA;
+        color: white;
+        margin: 5px 0 20px 0;
+    }
+}

@@ -1,79 +1,27 @@
-const webpack = require("webpack");
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-const production = process.env.NODE_ENV === 'production';
+const path = require("path");
 
 
 module.exports = {
-    entry: { build: path.resolve(__dirname, "./src/index.js") },
-    output: {
-        path: path.resolve(__dirname, "./build"),
-        filename: production ? '[name].[contenthash].js' : '[name].js',
-        publicPath: '/',
-    },
+    cache: false,
+    entry: './src/index.js',
     module: {
         rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: ["babel-loader"],
-            },
-            {
-                test: /\.s(a|c)ss$/,
-                exclude: /node_modules/,
-                use: [
-                    production ? MiniCssExtractPlugin.loader : 'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            sourceMap: !production
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: !production
-                        }
-                    }
-                ]
-            },
-
-        ],
+            { test: /\.(css|scss|sass)$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+            { test: /\.(js|jsx)$/, use: 'babel-loader' },
+            { test: /\.(svg)$/i, loader: 'file-loader', options: { name: 'public/[name].[ext]' } }
+        ]
     },
-    resolve: {
-        extensions: ["*", ".js", ".jsx", ".scss"],
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'index_bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
-        new CleanWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({
-            title: "Webpack & React",
-            template: "./src/index.html",
-            favicon: "./public/favicon.ico"
-        }),
-        new MiniCssExtractPlugin({
-            filename: production ? '[name].[contenthash].css' : '[name].css',
-        }),
+        new HtmlWebpackPlugin({ template: "./src/index.html", favicon: "./public/logo.png" })
     ],
-    devServer: {
-        port: 3000,
-        hot: true,
-        compress: true,
-        historyApiFallback: true,
-        static: {
-            directory: path.join(__dirname, 'build')
-        },
-        client: {
-            overlay: {
-                errors: true,
-                warnings: false,
-            },
-            progress: true
-        },
-    },
-    mode: production ? 'production' : 'development'
-};
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
+}
