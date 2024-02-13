@@ -20,7 +20,7 @@ const review_reducer = (state = initialState, action) => {
             time: item.time,
             title: item.title,
             smallImageURL: item.smallImageURL,
-            fullImageURL: item.fullImageURL,
+            bigImageURL: item.bigImageURL,
             key: item.key
         }));
 

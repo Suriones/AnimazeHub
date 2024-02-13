@@ -27,8 +27,8 @@ export const newsAPI = {
     async getAll() {
         return firebase.get("NewsList.json").then(response => response.data);
     },
-    postNews(value, username, time, title) {
-        return firebase.post("NewsList.json", { value: value, username: username, time: time, title: title });
+    postNews(news) {
+        return firebase.post("NewsList.json", { value: news.value, username: news.username, time: news.time, title: news.title });
     }
 }
 
@@ -37,7 +37,7 @@ export const reviewAPI = {
         return firebase.get("Review.json").then(response => response.data);
     },
     postReview(review) {
-        return firebase.post("Review.json", { content: review.content, username: review.username, time: review.time, title: review.title, smallImageURL: review.smallImageURL, fullImageURL: review.fullImageURL });
+        return firebase.post("Review.json", { content: review.content, username: review.username, time: review.time, title: review.title, smallImageURL: review.smallImageURL, bigImageURL: review.bigImageURL });
     }
 }
 
@@ -46,7 +46,7 @@ export const animeAPI = {
         return firebase.get("AnimeList.json").then(response => response.data);
     },
     postAnime(anime) {
-        return firebase.post("AnimeList.json", { name: anime.name, img: anime.img, description: anime.description, trailer: anime.trailer, year: anime.year, country: anime.country, genre: anime.genre, like: anime.like });
+        return firebase.post("AnimeList.json", { name: anime.name, img: anime.img, description: anime.description, trailer: anime.trailer, year: anime.year, country: anime.country, genre: anime.genre, like: anime.like, videoPlayer: anime.videoPlayer });
     }
 }
 

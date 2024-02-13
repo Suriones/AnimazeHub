@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import register_s from "./Register.module.scss"
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = (props) => {
 
@@ -13,13 +14,32 @@ const Register = (props) => {
 
     const createUser = () => {
         props.data.dispatch(props.data.authDAL.checkingLoginUniqueness(login.current.value)).then(response => {
-            response ? props.data.dispatch(props.data.authDAL.registerUser({
-                login: login.current.value,
-                password: password.current.value,
-                admin: admin.current.checked,
-                likedAnime: ""
-            })) : alert("Username is already taken!");
+            response ? sendUserData() : wrongData(login);
         });
+    }
+
+    const sendUserData = () => {
+        props.data.dispatch(props.data.authDAL.registerUser({
+            login: login.current.value,
+            password: password.current.value,
+            admin: admin.current.checked,
+            likedAnime: ""
+        }));
+        toast.success("Success!");
+    }
+
+    const wrongData = (login) => {
+        login.current.style = `background-color: rgb(255, 209, 209); border: 1px solid rgb(255, 209, 209);`;
+        login.current.className = register_s.animationError;
+
+        const removeClass = () => {
+            if (window.location.href === "http://localhost:8080/register") {
+                login.current.className = null;
+            }
+        }
+
+        setTimeout(removeClass, 300);
+        toast.error("Username is already taken!");
     }
 
     return <div className={register_s.registerForm}>

@@ -10,13 +10,13 @@ const ReviewAddingPage = (props) => {
 
     const Title = React.createRef(),
         SmallImageURL = React.createRef(),
-        FullImageURL = React.createRef(),
-        Content = React.createRef();
+        Content = React.createRef(),
+        BigImageURL = React.createRef();
 
     const postReview = () => props.data.dispatch(props.data.reviewDAL.postReview({
         title: Title.current.value,
         smallImageURL: SmallImageURL.current.value,
-        fullImageURL: FullImageURL.current.value,
+        bigImageURL: BigImageURL.current.value,
         content: Content.current.value,
         username: props.data.authData.login,
         time: time()
@@ -31,12 +31,12 @@ const ReviewAddingPage = (props) => {
             <div>
                 <label>Small image URL</label>
                 <input ref={SmallImageURL} />
-                <a className={reviewAddingPage_s.description}>Copy the link to the picture from Google. The desired scale is 1:1.</a>
+                <a className={reviewAddingPage_s.description}>Copy the link to the picture from Google. The desired scale is 1:1</a>
             </div>
             <div>
-                <label>Full image URL</label>
-                <input ref={FullImageURL} />
-                <a className={reviewAddingPage_s.description}>Copy the link to the picture from Google. The desired scale is 2:1.</a>
+                <label>Big image URL</label>
+                <input ref={BigImageURL} />
+                <a className={reviewAddingPage_s.description}>Copy the link to the picture from Google. The desired scale is 16:9</a>
             </div>
             <div>
                 <label>Content</label>

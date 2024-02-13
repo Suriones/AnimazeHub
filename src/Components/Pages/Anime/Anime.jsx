@@ -17,8 +17,10 @@ const Anime = (props) => {
             <div className={anime_s.search}>
                 <input value={props.searchValue} ref={props.search} onChange={props.setSearchValue} type="search" placeholder="Search..."></input>
             </div>
-            {props.admin ? <div className={anime_s.addAnime}>
-                <NavLink to={`/addAnime`}><button>Add Anime</button></NavLink>
+            {props.admin ? <div className={anime_s.adminPanel}>
+                <NavLink to={`/addAnime`}><button id={anime_s.firstButton}>Add Anime</button></NavLink>
+                <NavLink to={`/addReview`}><button>Add Review</button></NavLink>
+                <NavLink to={`/addNews`}><button>Add News</button></NavLink>
             </div> : null}
         </div>
 

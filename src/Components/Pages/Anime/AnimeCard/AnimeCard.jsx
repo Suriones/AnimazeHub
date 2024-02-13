@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import animeCard_s from "./AnimeCard.module.scss";
 import Like from "./../../../ReusableComponents/Like/Like.jsx";
+import { toast } from "react-toastify";
 
 const AnimeCard = (props) => {
 
@@ -9,7 +10,7 @@ const AnimeCard = (props) => {
         const plusLike = () => props.like(props.animeID, likeStatus());
         const minusLike = () => props.likedAnime.map(item => item[Object.keys(item)[0]] === props.animeID ? props.like(props.animeID, likeStatus(), Object.keys(item)[0]) : null);
 
-        props.authStatus ? likeStatus() === "/unlike.png" ? plusLike() : minusLike() : alert("Need to login/register!");
+        props.authStatus ? likeStatus() === "/unlike.png" ? plusLike() : minusLike() : toast.info("Need to login/register!");
     };
 
     const likeStatus = () => {

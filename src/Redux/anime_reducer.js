@@ -29,6 +29,7 @@ const anime_reducer = (state = initialState, action) => {
             genre: item.genre,
             like: item.like,
             animeID: item.animeID,
+            videoPlayer: item.videoPlayer,
             comments: {}
         }));
 
@@ -42,6 +43,7 @@ const anime_reducer = (state = initialState, action) => {
             genre: item.genre,
             like: item.like,
             animeID: item.animeID,
+            videoPlayer: item.videoPlayer,
             comments: {}
         }));
 

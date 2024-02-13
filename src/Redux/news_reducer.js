@@ -3,8 +3,6 @@ import { newsAPI } from "./../API/api";
 const initialState = {
     news: [],
     refresh: false,
-    titleOfTheNewsAddingField: "",
-    valueOfTheNewsAddingField: "",
     newsRequestStatus: false
 };
 
@@ -14,8 +12,6 @@ const news_reducer = (state = initialState, action) => {
         const stateCopy = {
             news: [],
             refresh: state.refresh,
-            titleOfTheNewsAddingField: state.titleOfTheNewsAddingField,
-            valueOfTheNewsAddingField: state.valueOfTheNewsAddingField,
             newsRequestStatus: state.newsRequestStatus
         }
 
@@ -44,14 +40,6 @@ const news_reducer = (state = initialState, action) => {
             stateCopy.refresh = !stateCopy.refresh;
             return stateCopy;
 
-        case "setTitleOfTheNewsAddingField":
-            stateCopy.titleOfTheNewsAddingField = action.value;
-            return stateCopy;
-
-        case "setValueOfTheNewsAddingField":
-            stateCopy.valueOfTheNewsAddingField = action.value;
-            return stateCopy;
-
         default:
             return stateCopy;
     }
@@ -69,13 +57,11 @@ export const newsDAL = {
             dispatch({ type: "setNewsState", newState: newData });
         }
     },
-    postNews(value, username, time, title) {
+    postNews(news) {
         return async (dispatch) => {
 
-            await newsAPI.postNews(value, username, time, title);
+            await newsAPI.postNews(news);
 
-            dispatch({ type: "setValueOfTheNewsAddingField", value: "" });
-            dispatch({ type: "setTitleOfTheNewsAddingField", value: "" });
             dispatch({ type: "refreshNewsDB" });
         }
     }

@@ -6,7 +6,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .anime {
-
     .tools {
         background-color: white;
         width: 1258px;
@@ -43,6 +42,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
         .search {
             width: 100%;
+            //margin-right: 5px;
 
             input {
                 width: 99%;
@@ -61,17 +61,23 @@ input[type="search"]::-webkit-search-results-decoration {
             }
         }
 
-        .addAnime {
+        .adminPanel {
             margin-left: auto;
+            display: flex;
 
             button {
                 border-radius: 5px;
                 border: 1px #d2d2d2 solid;
-                width: 130px;
+                width: 83px;
                 height: 35px;
                 background-color: #008CBA;
                 color: white;
-                margin: 2px 3px 0 5px;
+                margin: 2px 1px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            #firstButton {
+                margin-left: 5px;
             }
         }
     }
@@ -105,10 +111,10 @@ input[type="search"]::-webkit-search-results-decoration {
 
     .tools {
         width: 1013px !important;
+    }
 
-        button {
-            margin-left: 7px !important;
-        }
+    #firstButton {
+        margin-left: 8px !important;
     }
 }
 
@@ -118,11 +124,7 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 
     .tools {
-        width: 769px !important;
-
-        button {
-            margin-left: 10px !important;
-        }
+        width: 779px !important;
     }
 }
 
@@ -132,10 +134,10 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 
     .tools {
-        width: 517px !important;
+        width: 532px !important;
+    }
 
-        button {
-            margin-left: 12px !important;
-        }
+    #firstButton {
+        margin-left: 12px !important;
     }
 }

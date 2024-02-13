@@ -1,5 +1,8 @@
 import React, { Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Loading from "./Components/ReusableComponents/StateStatus/Loading/Loading.jsx";
 import HeaderContainer from "./Components/Header/HeaderContainer.jsx";
 import Register from "./Components/Pages/Auth/Register/Register.jsx";
@@ -9,7 +12,8 @@ import AnimeContainer from "./Components/Pages/Anime/AnimeContainer.jsx";
 import VideoContentPageContainer from "./Components/ReusableComponents/VideoContentPage/VideoContentPageContainer.jsx";
 import AnimeAddingPage from "./Components/Pages/Anime/AnimeAddingPage/AnimeAddingPage.jsx";
 import PageNotFound from "./Components/ReusableComponents/StateStatus/PageNotFound/PageNotFound.jsx";
-import ReviewAddingPage from "./Components/Pages/Main/ReviewAddingPage/ReviewAddingPage.jsx"
+import ReviewAddingPage from "./Components/Pages/Main/ReviewAddingPage/ReviewAddingPage.jsx";
+import NewsAddingPage from "./Components/Pages/Main/NewsAddingPage/NewsAddingPage.jsx"
 
 const App = (props) => {
 
@@ -51,6 +55,11 @@ const App = (props) => {
             reviewDAL: props.reviewDAL,
             authData: props.state.authData
         },
+        newsAddingPage: {
+            dispatch: props.dispatch,
+            newsDAL: props.newsDAL,
+            authData: props.state.authData
+        },
         animeFullPage: {
             dispatch: props.dispatch,
             animeDAL: props.animeDAL,
@@ -83,9 +92,11 @@ const App = (props) => {
                     <Route path="/anime/:animeId" element={<VideoContentPageContainer data={data.animeFullPage} />} />
                     <Route path="/addAnime" element={<AnimeAddingPage data={data.animeAddingPage} />} />
                     <Route path="/addReview" element={<ReviewAddingPage data={data.reviewAddingPage} />} />
+                    <Route path="/addNews" element={<NewsAddingPage data={data.newsAddingPage} />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </Suspense>
+            <ToastContainer />
         </div>
     );
 }

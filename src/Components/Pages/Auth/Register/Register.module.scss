@@ -53,6 +53,12 @@
         }
     }
 
+    .animationError {
+        animation: 0.1s tremor ease-out 0.1s;
+        -webkit-animation: 0.1s tremor ease-out 0.1s;
+        animation-iteration-count: 3;
+    }
+
     .warning {
         font-size: 15px;
         color: red;
@@ -136,4 +142,91 @@
     }
 
 
+}
+
+@-webkit-keyframes tremor {
+
+    0%,
+    25% {
+        left: -1px;
+        top: -1px;
+        -webkit-transform: translateX(-1%);
+        transform: translateX(-1%);
+    }
+
+    50%,
+    100% {
+        left: 1px;
+        top: 1px;
+        -webkit-transform: translateX(1%);
+        transform: translateX(1%);
+    }
+}
+
+@-moz-keyframes tremor {
+
+    0%,
+    25% {
+        left: -1px;
+        -webkit-transform: translateX(-1%);
+        transform: translateX(-1%);
+    }
+
+    50%,
+    100% {
+        left: 1px;
+        -webkit-transform: translateX(1%);
+        transform: translateX(1%);
+    }
+}
+
+@-ms-keyframes tremor {
+
+    0%,
+    25% {
+        left: -1px;
+        -webkit-transform: translateX(-1%);
+        transform: translateX(-1%);
+    }
+
+    50%,
+    100% {
+        left: 1px;
+        -webkit-transform: translateX(1%);
+        transform: translateX(1%);
+    }
+}
+
+@-o-keyframes tremor {
+
+    0%,
+    25% {
+        left: -1px;
+        -webkit-transform: translateX(-1%);
+        transform: translateX(-1%);
+    }
+
+    50%,
+    100% {
+        left: 1px;
+        -webkit-transform: translateX(1%);
+        transform: translateX(1%);
+    }
+}
+
+@keyframes tremor {
+
+    0%,
+    25% {
+        left: -1px;
+        -webkit-transform: translateX(-1%);
+        transform: translateX(-1%);
+    }
+
+    50%,
+    100% {
+        left: 1px;
+        -webkit-transform: translateX(1%);
+        transform: translateX(1%);
+    }
 }

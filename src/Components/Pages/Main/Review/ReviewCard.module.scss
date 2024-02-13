@@ -1,10 +1,9 @@
 .review {
-    width: 1215px;
+    width: 1180px;
     height: 88px;
     margin: 9px 0;
     padding: 10px 10px 15px 10px;
     font-family: BreeCYR-Light;
-    border-bottom: 1px #d2d2d2 solid;
 
     .reviewContainer {
         display: flex;
@@ -14,6 +13,7 @@
                 width: 89px;
                 height: 89px;
                 box-shadow: 0px 0px 3px 1px gray;
+                cursor: pointer;
             }
         }
 
@@ -23,6 +23,16 @@
             .title {
                 h3 {
                     margin: 0;
+                    font-size: 17px;
+                    min-height: 26px;
+                    cursor: pointer;
+                    width: max-content;
+                    -webkit-line-clamp: 1;
+                    line-clamp: 1;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    width: 1080px;
                 }
             }
 
@@ -33,8 +43,9 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 color: rgb(103, 103, 103);
-                width: 1110px;
-                height: 47px;
+                width: 1080px;
+                min-height: 48px;
+                height: max-content;
             }
 
             .description {
@@ -44,7 +55,6 @@
                     .username {
                         color: rgb(255, 79, 237);
                         margin-right: 5px;
-                        cursor: pointer;
                     }
 
                     .time {
@@ -52,15 +62,38 @@
                         font-size: 14px;
                     }
                 }
+            }
+        }
+    }
+}
 
-                .readFull {
-                    margin-left: auto;
+@media screen and (max-width: 1295px) {
+    .content {
+        width: 755px !important;
+    }
 
-                    a {
-                        text-decoration: none;
-                        color: black;
-                    }
-                }
+    .review {
+        width: 855px !important;
+
+        .title {
+            h3 {
+                width: 755px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .content {
+        width: 440px !important;
+    }
+
+    .review {
+        width: 540px !important;
+
+        .title {
+            h3 {
+                width: 440px !important;
             }
         }
     }

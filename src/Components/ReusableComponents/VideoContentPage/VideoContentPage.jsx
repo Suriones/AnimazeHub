@@ -2,6 +2,9 @@ import React from "react";
 import videoContentPage_s from "./VideoContentPage.module.scss";
 
 const VideoContentPage = (props) => {
+    const videoPlayer = props.data.videoPlayer === "Without player" ? null : props.data.videoPlayer;
+    const warning = props.data.videoPlayer === "Without player" ? "It is prohibited to add new players yourself" : "The site offers a test viewing of only the first episode in order not to distribute pirated content";
+
     return (
         <div className={videoContentPage_s.videoContentPage}>
 
@@ -31,11 +34,10 @@ const VideoContentPage = (props) => {
 
                 </div>
             </div>
+            <div className={videoContentPage_s.warning}>{warning}</div>
             <div className={videoContentPage_s.playerZone}>
                 <div className={videoContentPage_s.videoplayer}>
-                    <h3>Video player</h3>
-                    <p>I'm not a pirate and i don't have to plan to work on the player for now :)</p>
-                    <p>But all other functionality is completely at your disposal!</p>
+                    <iframe loading="lazy" frameBorder="0" allowFullScreen width="640" height="360" src={videoPlayer}></iframe>
                 </div>
             </div>
             <div className={videoContentPage_s.empty}></div>

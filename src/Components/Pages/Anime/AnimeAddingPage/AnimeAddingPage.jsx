@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AnimeAddingPage_s from "./AnimeAddingPage.module.scss"
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AnimeAddingPage = (props) => {
 
@@ -13,7 +14,8 @@ const AnimeAddingPage = (props) => {
         TrailerYouTubeUrl = React.createRef(),
         Year = React.createRef(),
         Country = React.createRef(),
-        Genre = React.createRef();
+        Genre = React.createRef(),
+        VideoPlayer = React.createRef();
 
     const sendNewAnimeToDB = () => {
         if (Title.current.value && IMGUrl.current.value && Description.current.value && TrailerYouTubeUrl.current.value && Year.current.value && Country.current.value && Genre.current.value) {
@@ -25,10 +27,11 @@ const AnimeAddingPage = (props) => {
                 year: Year.current.value,
                 country: Country.current.value,
                 genre: Genre.current.value,
-                like: 0
+                like: 0,
+                videoPlayer: VideoPlayer.current.value
             })).then(() => navigate("/anime"))
         } else {
-            alert("All fields must be filled in!")
+            toast.info("All fields must be filled in!")
         }
     };
 
@@ -71,6 +74,10 @@ const AnimeAddingPage = (props) => {
         <div>
             <label>Description</label>
             <input ref={Description} />
+        </div>
+        <div>
+            <label>Link to Video-Player</label>
+            <input id={AnimeAddingPage_s.disabled} value="Without player" disabled ref={VideoPlayer} />
         </div>
         <div>
             <label>YouTube Trailer URL</label>

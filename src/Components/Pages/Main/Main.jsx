@@ -1,19 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import main_s from "./Main.module.scss"
 import AnimeTips from "../../ReusableComponents/AnimeTips/AnimeTips.jsx";
-import { NavLink } from "react-router-dom";
 
 const Main = (props) => {
-    const visibleReviewComponents = props.reviewComponents.slice(0, 3);
+
+    const [numberPages, setNumberPages] = useState([0, 3]);
+
+    const reviewExpansion = (down) => {
+        if (down)
+            return numberPages[1] < props.reviewComponents.length ? setNumberPages([numberPages[0] + 1, numberPages[1] + 1]) : null;
+        else
+            return numberPages[0] > 0 ? setNumberPages([numberPages[0] - 1, numberPages[1] - 1]) : null;
+    }
 
     return <div>
         <div className={main_s.reviewContainer}>
-            {visibleReviewComponents}
-            <div className={main_s.tools}>
-                {props.admin ? <div className={main_s.addNewsButton}><NavLink to="/addReview"><button>Add Voluminous News</button></NavLink></div> : null}
-                <div className={main_s.arrow}><img src="/arrow.png"></img></div>
+            <div className={main_s.reviewContent}>
+                {props.reviewComponents.slice(numberPages[0], numberPages[1])}
             </div>
+
+            <div className={main_s.reviewScrollButton}>
+                <div className={`${main_s.wrapperArrow} ${main_s.arrow_top}`}>
+                    <div className={`${main_s.arrow} ${main_s.topArrow}`}>
+                        <img style={numberPages[0] === 0 ? { opacity: 0.3, cursor: "default" } : null} onClick={() => reviewExpansion(false)} src="/arrow.png"></img>
+                    </div>
+                </div>
+
+                <div className={`${main_s.wrapperArrow} ${main_s.arrow_bottom}`}>
+                    <div className={main_s.arrow}>
+                        <img style={numberPages[1] === props.reviewComponents.length ? { opacity: 0.3, cursor: "default" } : null} onClick={() => reviewExpansion(true)} src="/arrow.png"></img>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
         <div className={main_s.newsCardContainer}>
             <div className={main_s.newsContainer}>
                 {props.newsComponents}
