@@ -50,4 +50,15 @@ The comments component has a large amount of logic and is placed separately, so 
 <p><img width="25" alt="Screenshot_12" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/8c2351ee-2f8b-4982-9f4d-c8f2f2ee1e50">
 All styles used the SASS preprocessor.</p>
 
-<p><h2>Thank you for checking it out! <img width="65" alt="Screenshot_12" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/7ae6e0a7-1a7a-4861-831f-747489021a12"></h2></p>
+<h1>Small moments</h1>
+<ul>
+  <li>The site implements notifications about various events and information.</li>
+  <li>If the user enters data incorrectly (incorrect login or password, or the username is already taken during registration), an animation of the error and coloring of the fields is implemented.</li>
+  <li>Each page has a loading animation in case the render takes a long time.</li>
+  <li>Under each news and review, the real time and author are indicated, which are saved in the database.</li>
+  <li>Likes are implemented in one post with a request to send a like, and the response is used to display the current number (that is, when you click like, the number can be not just +1, but immediately +10, if other users liked the anime before updating the page).</li>
+  <li>Also, when registering, you have the opportunity to enable the administrator role to try out the functionality.</li>
+</ul>
+<p><img width="959" alt="image" src="https://github.com/Suriones/AnimazeHub/assets/111291999/524a2ae9-1f00-4d3b-9e39-b3eb1210967c"></p>
+
+<h2>Thank you for checking it out! <img width="45" alt="Screenshot_12" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/7ae6e0a7-1a7a-4861-831f-747489021a12"></h2>
