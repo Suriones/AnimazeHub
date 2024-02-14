@@ -799,127 +799,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./public/animaze.png":
-/*!****************************!*\
-  !*** ./public/animaze.png ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0b41a4cd8aae38b7b9f512a3c017b400.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/animaze.png?");
-
-/***/ }),
-
-/***/ "./public/arrow.png":
-/*!**************************!*\
-  !*** ./public/arrow.png ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"32d8788cd37c2ddde34377b762d9a352.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/arrow.png?");
-
-/***/ }),
-
-/***/ "./public/facebook_icon.png":
-/*!**********************************!*\
-  !*** ./public/facebook_icon.png ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"cd515d1359945bcbd81fb3f7da7c0ab0.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/facebook_icon.png?");
-
-/***/ }),
-
-/***/ "./public/icon_list.png":
-/*!******************************!*\
-  !*** ./public/icon_list.png ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"151e816f1506d2b51485ba1b7c618e16.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/icon_list.png?");
-
-/***/ }),
-
-/***/ "./public/instagram_icon.png":
-/*!***********************************!*\
-  !*** ./public/instagram_icon.png ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"bc603acad2a8cb3bd098aab18108a703.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/instagram_icon.png?");
-
-/***/ }),
-
-/***/ "./public/like.png":
-/*!*************************!*\
-  !*** ./public/like.png ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"a13e3857c7c7f11756ac40b64a1b2a58.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/like.png?");
-
-/***/ }),
-
-/***/ "./public/rating.png":
-/*!***************************!*\
-  !*** ./public/rating.png ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"bc38f53c25997a0acf83d73e5b911c91.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/rating.png?");
-
-/***/ }),
-
-/***/ "./public/telegram_icon.png":
-/*!**********************************!*\
-  !*** ./public/telegram_icon.png ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"20a60b580e642d0a24f190c6ca195b10.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/telegram_icon.png?");
-
-/***/ }),
-
-/***/ "./public/unLike.png":
-/*!***************************!*\
-  !*** ./public/unLike.png ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"c412cbaead4744166c20f9f335f73375.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/unLike.png?");
-
-/***/ }),
-
-/***/ "./public/user_exit.png":
-/*!******************************!*\
-  !*** ./public/user_exit.png ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ffb84288ea214f239189919a643e5585.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/user_exit.png?");
-
-/***/ }),
-
-/***/ "./public/youtube_icon.png":
-/*!*********************************!*\
-  !*** ./public/youtube_icon.png ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"e984794b46fe94b5e9e5492a904c4de4.png\");\n\n//# sourceURL=webpack://OtakuHub/./public/youtube_icon.png?");
-
-/***/ }),
-
 /***/ "./node_modules/react-toastify/dist/ReactToastify.css":
 /*!************************************************************!*\
   !*** ./node_modules/react-toastify/dist/ReactToastify.css ***!
@@ -1206,6 +1085,50 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./public/BreeCYR-Light.ttf":
+/*!**********************************!*\
+  !*** ./public/BreeCYR-Light.ttf ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"bcd0e38e128ef695371d.ttf\";\n\n//# sourceURL=webpack://OtakuHub/./public/BreeCYR-Light.ttf?");
+
+/***/ }),
+
+/***/ "./public/animaze.png":
+/*!****************************!*\
+  !*** ./public/animaze.png ***!
+  \****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"0b41a4cd8aae38b7b9f5.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/animaze.png?");
+
+/***/ }),
+
+/***/ "./public/arrow.png":
+/*!**************************!*\
+  !*** ./public/arrow.png ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"32d8788cd37c2ddde343.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/arrow.png?");
+
+/***/ }),
+
+/***/ "./public/facebook_icon.png":
+/*!**********************************!*\
+  !*** ./public/facebook_icon.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"cd515d1359945bcbd81f.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/facebook_icon.png?");
+
+/***/ }),
+
 /***/ "./public/header.jpg":
 /*!***************************!*\
   !*** ./public/header.jpg ***!
@@ -1213,7 +1136,40 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"d8da36ca8a3d5bf09463.jpg\";\n\n//# sourceURL=webpack://OtakuHub/./public/header.jpg?");
+eval("module.exports = __webpack_require__.p + \"5f8ecc73700a697b41b8.jpg\";\n\n//# sourceURL=webpack://OtakuHub/./public/header.jpg?");
+
+/***/ }),
+
+/***/ "./public/icon_list.png":
+/*!******************************!*\
+  !*** ./public/icon_list.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"151e816f1506d2b51485.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/icon_list.png?");
+
+/***/ }),
+
+/***/ "./public/instagram_icon.png":
+/*!***********************************!*\
+  !*** ./public/instagram_icon.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"bc603acad2a8cb3bd098.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/instagram_icon.png?");
+
+/***/ }),
+
+/***/ "./public/like.png":
+/*!*************************!*\
+  !*** ./public/like.png ***!
+  \*************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"a13e3857c7c7f11756ac.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/like.png?");
 
 /***/ }),
 
@@ -1224,18 +1180,62 @@ eval("module.exports = __webpack_require__.p + \"d8da36ca8a3d5bf09463.jpg\";\n\n
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"489745b6de47b69a57da.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/main-title-background.png?");
+eval("module.exports = __webpack_require__.p + \"f7471aea72d39770afc8.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/main-title-background.png?");
 
 /***/ }),
 
-/***/ "./public/BreeCYR-Light.ttf":
+/***/ "./public/rating.png":
+/*!***************************!*\
+  !*** ./public/rating.png ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"bc38f53c25997a0acf83.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/rating.png?");
+
+/***/ }),
+
+/***/ "./public/telegram_icon.png":
 /*!**********************************!*\
-  !*** ./public/BreeCYR-Light.ttf ***!
+  !*** ./public/telegram_icon.png ***!
   \**********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"bcd0e38e128ef695371d.ttf\";\n\n//# sourceURL=webpack://OtakuHub/./public/BreeCYR-Light.ttf?");
+eval("module.exports = __webpack_require__.p + \"20a60b580e642d0a24f1.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/telegram_icon.png?");
+
+/***/ }),
+
+/***/ "./public/unLike.png":
+/*!***************************!*\
+  !*** ./public/unLike.png ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"c412cbaead4744166c20.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/unLike.png?");
+
+/***/ }),
+
+/***/ "./public/user_exit.png":
+/*!******************************!*\
+  !*** ./public/user_exit.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"ffb84288ea214f239189.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/user_exit.png?");
+
+/***/ }),
+
+/***/ "./public/youtube_icon.png":
+/*!*********************************!*\
+  !*** ./public/youtube_icon.png ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"e984794b46fe94b5e9e5.png\";\n\n//# sourceURL=webpack://OtakuHub/./public/youtube_icon.png?");
 
 /***/ }),
 
