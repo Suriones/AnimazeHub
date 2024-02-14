@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import header_s from "./Header.module.scss"
 import Header from "./Header.jsx";
+import userExitPNG from "./../../../public/user_exit.png"
 
 const HeaderContainer = React.memo((props) => {
 
@@ -14,7 +15,7 @@ const HeaderContainer = React.memo((props) => {
                     Login: {props.authData.login}
                 </div>
                 <div className={header_s.exitButton}>
-                    <img onClick={() => { props.dispatch({ type: "exitUser" }); navigate("/") }} src="user_exit.png"></img>
+                    <img onClick={() => { props.dispatch({ type: "exitUser" }); navigate("/") }} src={userExitPNG}></img>
                 </div>
             </div>
         </nav>

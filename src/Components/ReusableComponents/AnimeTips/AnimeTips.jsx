@@ -1,6 +1,8 @@
 import React from "react";
 import animeTips_s from "./animeTips.module.scss";
 import { NavLink } from "react-router-dom";
+import ratingPNG from "./../../../../public/rating.png";
+import likePNG from "./../../../../public/like.png";
 
 const AnimeTips = (props) => {
 
@@ -26,7 +28,7 @@ const AnimeTips = (props) => {
                         <p>{mostLikeAnimeList[i].name}</p>
                     </div>
                     <p className={animeTips_s.like}>{mostLikeAnimeList[i].like}</p>
-                    <img src="/like.png"></img>
+                    <img src={likePNG}></img>
                 </div>
             </div>);
         }
@@ -48,7 +50,7 @@ const AnimeTips = (props) => {
 
     return <div className={animeTips_s.animeTips}>
         <div className={animeTips_s.information}>
-            <img src="/rating.png"></img>
+            <img src={ratingPNG}></img>
             <h3>Recommendations</h3>
         </div>
         <div className={animeTips_s.description}>

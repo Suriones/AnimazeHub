@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter, BrowserRouter } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -84,17 +84,17 @@ const App = (props) => {
         <div>
             <HeaderContainer authData={props.state.authData} dispatch={props.dispatch} />
             <Suspense fallback={<Loading />}>
-                <Routes>
-                    <Route path="/login" element={<Login data={data.login} />} />
-                    <Route path="/register" element={<Register data={data.register} />} />
-                    <Route path="/" element={<MainContainer data={data.main} />} />
-                    <Route path="/anime" element={<AnimeContainer data={data.anime} />} />
-                    <Route path="/anime/:animeId" element={<VideoContentPageContainer data={data.animeFullPage} />} />
-                    <Route path="/addAnime" element={<AnimeAddingPage data={data.animeAddingPage} />} />
-                    <Route path="/addReview" element={<ReviewAddingPage data={data.reviewAddingPage} />} />
-                    <Route path="/addNews" element={<NewsAddingPage data={data.newsAddingPage} />} />
-                    <Route path="*" element={<PageNotFound />} />
-                </Routes>
+                    <Routes>
+                        <Route path="/login" element={<Login data={data.login} />} />
+                        <Route path="/register" element={<Register data={data.register} />} />
+                        <Route path="/" element={<MainContainer data={data.main} />} />
+                        <Route path="/anime" element={<AnimeContainer data={data.anime} />} />
+                        <Route path="/anime/:animeId" element={<VideoContentPageContainer data={data.animeFullPage} />} />
+                        <Route path="/addAnime" element={<AnimeAddingPage data={data.animeAddingPage} />} />
+                        <Route path="/addReview" element={<ReviewAddingPage data={data.reviewAddingPage} />} />
+                        <Route path="/addNews" element={<NewsAddingPage data={data.newsAddingPage} />} />
+                        <Route path="*" element={<PageNotFound />} />
+                    </Routes>
             </Suspense>
             <ToastContainer />
         </div>

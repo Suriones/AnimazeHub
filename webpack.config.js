@@ -9,13 +9,18 @@ module.exports = {
         rules: [
             { test: /\.(css|scss|sass)$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
             { test: /\.(js|jsx)$/, use: 'babel-loader' },
-            { test: /\.(svg)$/i, loader: 'file-loader', options: { name: 'public/[name].[ext]' } }
+            { test: /\.(svg)$/, loader: 'file-loader', options: { name: 'public/[name].[ext]' } },
+            {
+                test: /\.(png|jpg|jpeg|svg|gif)$/,
+                type: 'asset/resource',
+            }
         ]
     },
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index_bundle.js',
         publicPath: '/'
+        //publicPath: 'https://suriones.github.io/AnimazeHub/'
     },
     devServer: {
         historyApiFallback: true

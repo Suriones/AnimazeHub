@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AnimeCard from "./AnimeCard/AnimeCard.jsx";
 import Loading from "./../../ReusableComponents/StateStatus/Loading/Loading.jsx"
 import Anime from "./Anime.jsx";
+import unLikePNG from "./../../../../public/unLike.png";
 
 const AnimeContainer = React.memo((props) => {
 
@@ -27,7 +28,7 @@ const AnimeContainer = React.memo((props) => {
         const search = React.createRef();
         const setValueSearchField = () => props.data.dispatch({ type: "setValueSearchField", value: search.current.value });
 
-        const like = (animeID, likeStatus, likeID) => likeStatus === "/unlike.png" ? props.data.dispatch(props.data.authDAL.likeAnime(props.data.authData.userID, animeID)) : props.data.dispatch(props.data.authDAL.unlikeAnime(props.data.authData.userID, likeID, animeID));
+        const like = (animeID, likeStatus, likeID) => likeStatus === unLikePNG ? props.data.dispatch(props.data.authDAL.likeAnime(props.data.authData.userID, animeID)) : props.data.dispatch(props.data.authDAL.unlikeAnime(props.data.authData.userID, likeID, animeID));
 
         const animeList = [];
         props.data.animeData.filteredAnime.map(a => animeList.push(<AnimeCard authStatus={props.data.authData.authStatus} likedAnime={props.data.authData.likedAnime} animeID={a.animeID} key={a.animeID} name={a.name} img={a.img} description={a.description} year={a.year} likeCount={a.like} like={like} />));

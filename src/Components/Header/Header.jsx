@@ -1,13 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import header_s from "./Header.module.scss"
+import header_s from "./Header.module.scss";
+import animazePNG from "./../../../public/animaze.png";
+import facebookICON from "./../../../public/facebook_icon.png";
+import telegramICON from "./../../../public/telegram_icon.png";
+import instagramICON from "./../../../public/instagram_icon.png";
+import youtubeICON from "./../../../public/youtube_icon.png";
+import iconList from "./../../../public/icon_list.png"
 
 const Header = (props) => {
     return <header>
         <div className={header_s.line}></div>
         <div className={header_s.mainHeader}>
             <div className={header_s.logo}>
-                <img src="/animaze.png"></img>
+                <img src={animazePNG}></img>
                 <NavLink to="/"><div className={header_s.newsButton}></div></NavLink>
             </div>
 
@@ -33,7 +39,7 @@ const Header = (props) => {
                     </li>
                 </ul>
                 <div className={header_s.dropdown}>
-                    <img className={header_s.mainmenubtn} src="/icon_list.png"></img>
+                    <img className={header_s.mainmenubtn} src={iconList}></img>
                     <div className={header_s.dropdownChild}>
                         <NavLink className={header_s.navlink} to="/anime">Anime</NavLink>
                         <a className={`${header_s.navlink} ${header_s.lockedNavlink}`}>Anime Movies</a>
@@ -47,10 +53,10 @@ const Header = (props) => {
             {props.authorization}
 
             <div className={header_s.socialMedia}>
-                <img src="/facebook_icon.png"></img>
-                <img src="/telegram_icon.png"></img>
-                <img src="/instagram_icon.png"></img>
-                <img src="/youtube_icon.png"></img>
+                <img src={facebookICON}></img>
+                <img src={telegramICON}></img>
+                <img src={instagramICON}></img>
+                <img src={youtubeICON}></img>
             </div>
         </div>
     </header >

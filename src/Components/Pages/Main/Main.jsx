@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import main_s from "./Main.module.scss"
 import AnimeTips from "../../ReusableComponents/AnimeTips/AnimeTips.jsx";
+import arrowPNG from "./../../../../public/arrow.png"
 
 const Main = (props) => {
 
@@ -22,13 +23,13 @@ const Main = (props) => {
             <div className={main_s.reviewScrollButton}>
                 <div className={`${main_s.wrapperArrow} ${main_s.arrow_top}`}>
                     <div className={`${main_s.arrow} ${main_s.topArrow}`}>
-                        <img style={numberPages[0] === 0 ? { opacity: 0.3, cursor: "default" } : null} onClick={() => reviewExpansion(false)} src="/arrow.png"></img>
+                        <img style={numberPages[0] === 0 ? { opacity: 0.3, cursor: "default" } : null} onClick={() => reviewExpansion(false)} src={arrowPNG}></img>
                     </div>
                 </div>
 
                 <div className={`${main_s.wrapperArrow} ${main_s.arrow_bottom}`}>
                     <div className={main_s.arrow}>
-                        <img style={numberPages[1] === props.reviewComponents.length ? { opacity: 0.3, cursor: "default" } : null} onClick={() => reviewExpansion(true)} src="/arrow.png"></img>
+                        <img style={numberPages[1] === props.reviewComponents.length ? { opacity: 0.3, cursor: "default" } : null} onClick={() => reviewExpansion(true)} src={arrowPNG}></img>
                     </div>
                 </div>
             </div>
