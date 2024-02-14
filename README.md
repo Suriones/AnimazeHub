@@ -12,14 +12,20 @@
 </ul>
 
 <h1>Launch</h1>
+<p>You can try the project simply by following the link: <a href="https://suriones.github.io/AnimazeHub/">https://suriones.github.io/AnimazeHub/</a></p>
+<p>For a more detailed view, copy the repository from the main branch, and then enter the following commands into the console:</p>
 <ul>
   <li>Install all dependencies: "npm install"</li>
-  <li>Start webpack dev-server: "npm run dev" (3000) + open new console and start json-server "npm run json-server" (3001)</li>
-  <li>URL: <a href="http://localhost:3000/">http://localhost:3000/</a></li>
+  <li>Start webpack dev-server (8080 port): "npm run dev"</li>
+  <li>URL: <a href="http://localhost:3000/">http://localhost:8080/</a></li>
 </ul>
+<p>The differences between the Dev version and the Deploy version are only the configuration of the webpack config:</p>
+<img src="">
+
+
 
 <h1>Description</h1>
-<p>My project allows me to maintain an anime resource where users can view news, anime, learn about new titles and communicate in comments. Administrators have the ability to add news and new anime.</p>
+<p>My project allows users to watch animated series, register, communicate with other users through comments, and also vote for their personal favorite series to promote them in the rating feed. Users can also view brief main updates on the website in special news cards, and for more extensive news articles from the world of TV series there is a “Preview” section, where there is no character limit and there is an option to further customize the appearance of the article, with images, headings and more.</p>
 <p><img width="1000" alt="Screenshot_1" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/693e9193-4e37-41a6-b45f-07a3639ef443"></p>
 
 <p><img width="25" alt="Screenshot_1" src="https://github.com/Suriones/ReactApp_2023/assets/111291999/085ca018-e490-4fd9-923b-c791a7258ec4">
