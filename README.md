@@ -5,7 +5,6 @@
 <p align="center">My project is a ready-made online platform for watching animated series, publishing news, detailed control and editing of any publications, communicating in comments, maintaining statistics on series and much more. The project interacts with Firebase.</p>
 
 <h1><a href="https://github.com/Suriones/AnimazeHub/blob/main/package.json">Technology</a></h1>
-<p>I didn't use create-react-app and built the project from scratch.</p>
 <ul>
   <li>HTML, Sass, JavaScript, React, Redux, Webpack</li>
   <li>Axios, Jest, Babel, gh-pages</li>
