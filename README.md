@@ -2,14 +2,13 @@
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Frontend React developer from Ukraine</h3>
 
-<p align="center">My project is a ready-made platform for watching and discussing anime. Users can register, leave comments, and administrators can add news and new series. The database is a JSON file.</p>
+<p align="center">My project is a ready-made online platform for watching animated series, publishing news, detailed control and editing of any publications, communicating in comments, maintaining statistics on series and much more. The project interacts with Firebase.</p>
 
 <h1><a href="https://github.com/Suriones/ReactApp_2023/blob/main/package.json">Technology</a></h1>
 <p>I didn't use create-react-app and built the project from scratch.</p>
 <ul>
-  <li>React, Redux, Bootstrap</li>
-  <li>Axios, Json-Server</li>
-  <li>Webpack, Babel, Sass, Jest</li>
+  <li>HTML, Sass, JavaScript, React, Redux, Webpack</li>
+  <li>Axios, Jest, Babel, gh-pages</li>
 </ul>
 
 <h1>Launch</h1>
