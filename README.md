@@ -3,6 +3,7 @@
 <h3 align="center">Frontend React developer from Ukraine</h3>
 
 <p align="center">My project is a ready-made online platform for watching animated series, publishing news, detailed control and editing of any publications, communicating in comments, maintaining statistics on series and much more. The project interacts with Firebase.</p>
+<h4 align="center">At the moment I have disabled reading and writing to the database, in which case my contacts are available for communication.</h4>
 
 <h1><a href="https://github.com/Suriones/AnimazeHub/blob/main/package.json">Technology</a></h1>
 <ul>
